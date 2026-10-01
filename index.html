@@ -6,29 +6,27 @@
 
 <title>RECRUIT | 17Bakery</title>
 <meta name="description" content="愛知県稲沢市 17Bakery 採用サイト">
-<meta name="theme-color" content="#171512">
+<meta name="theme-color" content="#11110f">
 
 <style>
 
 /* =========================================================
    17BAKERY RECRUIT
-   MOBILE-FIRST CINEMATIC EDITION
+   CINEMATIC / MOBILE FIRST
 ========================================================= */
 
 :root{
   --ink:#1c1a17;
-  --paper:#f8f4ed;
+  --paper:#f8f5ef;
   --cream:#eee7dc;
-  --dark:#151411;
-  --brown:#8d7257;
-  --line:rgba(38,31,25,.14);
+  --dark:#11110f;
+  --brown:#8c7259;
+  --line:rgba(40,32,25,.14);
   --white:#fff;
   --ease:cubic-bezier(.16,1,.3,1);
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 html{
   scroll-behavior:smooth;
@@ -36,22 +34,12 @@ html{
 
 body{
   margin:0;
+  overflow-x:hidden;
   background:var(--paper);
   color:var(--ink);
-
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Hiragino Kaku Gothic ProN",
-    "Yu Gothic",
-    sans-serif;
-
+  font-family:-apple-system,BlinkMacSystemFont,
+  "Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
   line-height:1.9;
-  overflow-x:hidden;
-}
-
-body.menu-open{
-  overflow:hidden;
 }
 
 img{
@@ -59,26 +47,16 @@ img{
   width:100%;
 }
 
-a{
-  color:inherit;
-}
+a{color:inherit}
 
 .wrap{
-  width:min(1120px,88vw);
+  width:min(1100px,88vw);
   margin:auto;
 }
 
 section{
   position:relative;
-  padding:120px 0;
-}
-
-.serif{
-  font-family:
-    Georgia,
-    "Yu Mincho",
-    "Hiragino Mincho ProN",
-    serif;
+  padding:110px 0;
 }
 
 .eyebrow{
@@ -86,48 +64,41 @@ section{
   color:var(--brown);
   font-size:10px;
   font-weight:800;
-  letter-spacing:.30em;
+  letter-spacing:.28em;
 }
 
 .heading{
-  margin:0 0 32px;
-
-  font-family:
-    Georgia,
-    "Yu Mincho",
-    serif;
-
-  font-size:clamp(38px,5.7vw,70px);
+  margin:0 0 30px;
+  font-family:Georgia,"Yu Mincho","Hiragino Mincho ProN",serif;
+  font-size:clamp(38px,5.5vw,68px);
   font-weight:400;
-  line-height:1.18;
-  letter-spacing:-.04em;
+  line-height:1.2;
+  letter-spacing:-.035em;
 }
 
 .lead{
   max-width:760px;
   margin:0;
-
   font-size:16px;
   line-height:2;
 }
 
 .reveal{
   opacity:0;
-  transform:translateY(40px);
-
+  transform:translateY(28px);
   transition:
-    opacity .9s var(--ease),
-    transform .9s var(--ease);
+    opacity .85s var(--ease),
+    transform .85s var(--ease);
 }
 
-.reveal.is-visible{
+.reveal.visible{
   opacity:1;
   transform:none;
 }
 
 
 /* =========================================================
-   PROGRESS BAR
+   PAGE PROGRESS
 ========================================================= */
 
 .progress{
@@ -135,17 +106,15 @@ section{
   z-index:9999;
   top:0;
   left:0;
-
   width:100%;
   height:2px;
-
   pointer-events:none;
 }
 
 .progress-bar{
   width:0;
   height:100%;
-  background:#fff;
+  background:white;
   mix-blend-mode:difference;
 }
 
@@ -157,22 +126,19 @@ section{
 .nav{
   position:fixed;
   z-index:900;
-
   top:0;
   left:0;
   right:0;
 
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
 
   padding:
-    calc(20px + env(safe-area-inset-top))
-    5vw
-    20px;
+    calc(19px + env(safe-area-inset-top))
+    5vw 18px;
 
   color:white;
-
   pointer-events:none;
 }
 
@@ -180,30 +146,26 @@ section{
   font-size:10px;
   font-weight:800;
   letter-spacing:.22em;
-
-  text-shadow:0 2px 12px rgba(0,0,0,.25);
+  text-shadow:0 2px 12px rgba(0,0,0,.3);
 }
 
 .nav-entry{
   pointer-events:auto;
+  padding:9px 16px;
 
-  padding:10px 17px;
-
-  border:1px solid rgba(255,255,255,.35);
+  border:1px solid rgba(255,255,255,.34);
   border-radius:999px;
 
-  background:rgba(15,14,12,.24);
-
+  background:rgba(15,14,12,.3);
   color:white;
 
   text-decoration:none;
-
-  font-size:10px;
+  font-size:9px;
   font-weight:800;
-  letter-spacing:.14em;
+  letter-spacing:.15em;
 
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
 }
 
 
@@ -213,132 +175,88 @@ section{
 
 .hero{
   position:relative;
-
   height:100svh;
   min-height:650px;
-
   overflow:hidden;
-
   background:#111;
   color:white;
 }
 
-.hero-media{
+.hero-image{
   position:absolute;
-  inset:-4%;
-
-  width:108%;
-  height:108%;
+  inset:0;
+  width:100%;
+  height:100%;
 
   object-fit:cover;
   object-position:center;
 
-  transform:scale(1.08);
-
-  animation:heroIn 2.2s var(--ease) forwards;
+  transform:scale(1.015);
+  animation:heroOpen 2s var(--ease) forwards;
 }
 
-@keyframes heroIn{
-  to{
-    transform:scale(1);
-  }
+@keyframes heroOpen{
+  to{transform:scale(1)}
 }
 
-.hero-shade{
+.hero-overlay{
   position:absolute;
   inset:0;
 
   background:
     linear-gradient(
       180deg,
-      rgba(0,0,0,.14) 0%,
+      rgba(0,0,0,.10) 0%,
       rgba(0,0,0,.03) 35%,
-      rgba(0,0,0,.22) 58%,
+      rgba(0,0,0,.24) 62%,
       rgba(0,0,0,.82) 100%
     );
-}
-
-.hero-grain{
-  position:absolute;
-  inset:0;
-
-  opacity:.12;
-
-  background-image:
-    radial-gradient(rgba(255,255,255,.5) .6px,transparent .6px);
-
-  background-size:6px 6px;
-
-  pointer-events:none;
 }
 
 .hero-content{
   position:absolute;
   z-index:2;
-
   left:6vw;
   bottom:9vh;
-
-  width:min(1000px,88vw);
+  width:min(950px,88vw);
 }
 
-.hero-kicker{
+.hero-small{
   opacity:0;
-
-  margin-bottom:16px;
-
+  margin-bottom:14px;
   font-size:10px;
-  letter-spacing:.34em;
-
-  animation:
-    copyIn .8s .35s var(--ease) forwards;
+  letter-spacing:.32em;
+  animation:textIn .8s .25s var(--ease) forwards;
 }
 
 .hero-title{
   margin:0;
-
-  font-family:
-    Georgia,
-    "Yu Mincho",
-    serif;
-
-  font-size:clamp(50px,8.3vw,108px);
+  font-family:Georgia,"Yu Mincho",serif;
+  font-size:clamp(50px,8vw,105px);
   font-weight:400;
-  line-height:1.03;
-  letter-spacing:-.055em;
+  line-height:1.05;
+  letter-spacing:-.05em;
 }
 
 .hero-title span{
   display:block;
-
   opacity:0;
-  transform:translateY(45px);
-
-  animation:
-    copyIn 1s var(--ease) forwards;
+  transform:translateY(35px);
+  animation:textIn .9s var(--ease) forwards;
 }
 
-.hero-title span:nth-child(1){
-  animation-delay:.55s;
-}
-
-.hero-title span:nth-child(2){
-  animation-delay:.75s;
-}
+.hero-title span:nth-child(1){animation-delay:.45s}
+.hero-title span:nth-child(2){animation-delay:.65s}
 
 .hero-sub{
   opacity:0;
-
-  margin-top:25px;
-
+  margin-top:23px;
   font-size:clamp(14px,1.8vw,19px);
   line-height:1.8;
-
-  animation:
-    copyIn .9s 1s var(--ease) forwards;
+  animation:textIn .8s .9s var(--ease) forwards;
 }
 
-@keyframes copyIn{
+@keyframes textIn{
   to{
     opacity:1;
     transform:none;
@@ -347,74 +265,52 @@ section{
 
 .hero-scroll{
   position:absolute;
-  z-index:3;
-
+  z-index:2;
   right:5vw;
-  bottom:8vh;
+  bottom:7vh;
 
   font-size:9px;
   letter-spacing:.22em;
-
   writing-mode:vertical-rl;
 }
 
 .hero-scroll:after{
   content:"";
-
   display:block;
-
   width:1px;
   height:55px;
-
-  margin:14px auto 0;
-
+  margin:13px auto 0;
   background:white;
-
-  animation:pulse 1.8s infinite;
-}
-
-@keyframes pulse{
-  50%{
-    opacity:.25;
-  }
 }
 
 
 /* =========================================================
-   BIG MARQUEE
+   MARQUEE
 ========================================================= */
 
 .marquee{
   overflow:hidden;
-
-  padding:20px 0;
-
+  padding:18px 0;
   background:var(--dark);
   color:white;
-
   white-space:nowrap;
 }
 
 .marquee-track{
   display:flex;
   width:max-content;
-
-  animation:marqueeMove 25s linear infinite;
+  animation:marquee 28s linear infinite;
 }
 
 .marquee-track span{
   padding-right:4vw;
-
   font-family:Georgia,serif;
-  font-size:clamp(17px,2vw,26px);
-
-  letter-spacing:.14em;
+  font-size:clamp(15px,2vw,23px);
+  letter-spacing:.16em;
 }
 
-@keyframes marqueeMove{
-  to{
-    transform:translateX(-50%);
-  }
+@keyframes marquee{
+  to{transform:translateX(-50%)}
 }
 
 
@@ -426,121 +322,136 @@ section{
   overflow:hidden;
 }
 
-.message-copy{
-  position:relative;
-  z-index:2;
-}
+.message-number{
+  position:absolute;
+  z-index:-1;
+  right:2vw;
+  top:30px;
 
-.message .heading{
-  max-width:850px;
+  font-family:Georgia,serif;
+  font-size:clamp(140px,22vw,300px);
+  line-height:1;
+  color:rgba(60,45,30,.05);
 }
 
 .message-photo{
-  position:relative;
+  width:min(1050px,90vw);
+  margin:60px auto 0;
+}
 
-  width:min(1120px,94vw);
-  height:min(70vw,720px);
-
-  margin:65px auto 0;
-
+.photo-frame{
   overflow:hidden;
+  background:#ddd;
 }
 
-.message-photo img{
+.photo-frame img{
   width:100%;
-  height:115%;
-
-  object-fit:cover;
+  height:auto;
+  object-fit:contain;
+  transition:transform 1.2s var(--ease);
 }
 
-.message-number{
-  position:absolute;
-
-  right:3vw;
-  bottom:-45px;
-
-  z-index:-1;
-
-  font-family:Georgia,serif;
-  font-size:clamp(120px,22vw,300px);
-
-  line-height:1;
-
-  color:rgba(82,66,50,.06);
+.photo-frame.visible img{
+  transform:scale(1.008);
 }
 
 
 /* =========================================================
-   CINEMATIC BREAK
+   MOVIE - EARLY
 ========================================================= */
 
-.cinematic-break{
-  position:relative;
-
-  height:90svh;
-  min-height:600px;
-
+.movie{
   overflow:hidden;
-
-  display:flex;
-  align-items:center;
-
+  background:#10100e;
   color:white;
-  background:#111;
 }
 
-.cinematic-break img{
+.movie .eyebrow{
+  color:#cdb89e;
+}
+
+.movie .heading{
+  color:white;
+}
+
+.movie-intro{
+  max-width:690px;
+  margin-bottom:45px;
+  color:#d7d2cb;
+  font-size:15px;
+}
+
+.movie-lead{
+  margin-bottom:12px;
+  color:white;
+  font-family:Georgia,"Yu Mincho",serif;
+  font-size:clamp(24px,3.2vw,38px);
+  line-height:1.5;
+}
+
+.movie-frame{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  background:#000;
+  box-shadow:0 30px 90px rgba(0,0,0,.42);
+}
+
+.movie-frame iframe{
   position:absolute;
   inset:0;
-
   width:100%;
   height:100%;
-
-  object-fit:cover;
+  border:0;
 }
 
-.cinematic-break:after{
-  content:"";
 
-  position:absolute;
-  inset:0;
+/* =========================================================
+   BAKERY BREAK
+========================================================= */
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0,0,0,.66),
-      rgba(0,0,0,.08)
-    );
+.bakery-break{
+  padding:85px 0;
+  background:var(--paper);
 }
 
-.cinematic-copy{
+.bakery-break-photo{
   position:relative;
-  z-index:2;
-
-  width:min(1120px,88vw);
+  width:min(1100px,90vw);
   margin:auto;
 }
 
-.cinematic-copy small{
-  font-size:10px;
+.bakery-break-photo img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+
+.bakery-break-copy{
+  position:absolute;
+  left:5%;
+  bottom:7%;
+  color:white;
+  text-shadow:0 3px 20px rgba(0,0,0,.5);
+}
+
+.bakery-break-copy small{
+  font-size:9px;
   letter-spacing:.3em;
 }
 
-.cinematic-copy h2{
-  max-width:800px;
-
-  margin:15px 0 0;
-
+.bakery-break-copy h2{
+  margin:8px 0 0;
   font-family:Georgia,"Yu Mincho",serif;
-
-  font-size:clamp(45px,7vw,92px);
+  font-size:clamp(36px,5vw,65px);
   font-weight:400;
-  line-height:1.12;
+  line-height:1.2;
 }
 
 
 /* =========================================================
-   RECRUIT CARDS
+   RECRUIT
 ========================================================= */
 
 .recruit{
@@ -550,448 +461,291 @@ section{
 .jobs{
   display:grid;
   grid-template-columns:1fr 1fr;
-
   gap:18px;
-
-  margin-top:50px;
+  margin-top:45px;
 }
 
 .job{
   position:relative;
-
-  padding:40px;
-
-  overflow:hidden;
-
-  background:rgba(255,255,255,.76);
-
-  border:1px solid rgba(255,255,255,.7);
-
-  box-shadow:
-    0 18px 60px rgba(52,39,27,.07);
+  padding:38px;
+  background:rgba(255,255,255,.8);
+  border:1px solid rgba(255,255,255,.8);
+  box-shadow:0 15px 50px rgba(50,38,27,.06);
 }
 
 .job:before{
   content:"";
-
   position:absolute;
-
   top:0;
   left:0;
-
   width:100%;
   height:3px;
-
   background:var(--ink);
 }
 
 .job-label{
   font-size:10px;
   font-weight:800;
-  letter-spacing:.2em;
+  letter-spacing:.18em;
 }
 
 .job h3{
-  margin:7px 0 20px;
-
+  margin:7px 0 18px;
   font-family:Georgia,"Yu Mincho",serif;
-  font-size:30px;
+  font-size:29px;
   font-weight:400;
 }
 
 .price{
-  margin:14px 0 3px;
-
-  font-size:31px;
+  margin:13px 0 2px;
+  font-size:30px;
   font-weight:800;
 }
 
 
 /* =========================================================
-   WORK - FULL SCREEN STORIES
+   WORK
 ========================================================= */
 
 .work{
-  padding-bottom:0;
-}
-
-.work-intro{
-  padding-bottom:70px;
-}
-
-.work-stories{
-  background:#111;
-}
-
-.story{
-  position:relative;
-
-  min-height:92svh;
-
-  overflow:hidden;
-
-  display:flex;
-  align-items:flex-end;
-
+  background:var(--dark);
   color:white;
 }
 
-.story img{
-  position:absolute;
-  inset:0;
+.work .eyebrow{
+  color:#cdb89e;
+}
 
+.work-head{
+  margin-bottom:70px;
+}
+
+.work .lead{
+  color:#ddd8d1;
+}
+
+.work-list{
+  display:grid;
+  gap:90px;
+}
+
+.work-item{
+  width:min(1000px,100%);
+  margin:auto;
+}
+
+.work-photo{
   width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  transform:scale(1.03);
-
-  transition:
-    transform 1.5s var(--ease);
+  overflow:hidden;
+  background:#191917;
 }
 
-.story.is-visible img{
-  transform:scale(1);
+.work-photo img{
+  width:100%;
+  height:auto;
+  max-height:680px;
+  object-fit:contain;
+  margin:auto;
 }
 
-.story:after{
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,.05) 35%,
-      rgba(0,0,0,.82) 100%
-    );
+.work-copy{
+  display:grid;
+  grid-template-columns:130px 1fr;
+  gap:25px;
+  padding-top:24px;
 }
 
-.story-copy{
-  position:relative;
-  z-index:2;
-
-  width:min(1120px,88vw);
-
-  margin:0 auto;
-
-  padding-bottom:8vh;
-}
-
-.story-index{
-  display:block;
-
-  margin-bottom:9px;
-
+.work-num{
+  padding-top:7px;
+  color:#baa890;
   font-family:Georgia,serif;
-  font-size:12px;
-  letter-spacing:.22em;
+  font-size:11px;
+  letter-spacing:.18em;
 }
 
-.story h3{
-  margin:0;
-
+.work-copy h3{
+  margin:0 0 8px;
   font-family:Georgia,"Yu Mincho",serif;
-  font-size:clamp(43px,7vw,80px);
+  font-size:clamp(28px,4vw,46px);
   font-weight:400;
-  line-height:1.1;
 }
 
-.story p{
-  max-width:550px;
-
-  margin:16px 0 0;
-
-  font-size:15px;
+.work-copy p{
+  max-width:580px;
+  margin:0;
+  color:#d8d3cc;
 }
 
 
 /* =========================================================
-   HUGE TYPE
+   GIANT TYPE
 ========================================================= */
 
 .type-band{
   overflow:hidden;
-
-  padding:42px 0;
-
+  padding:40px 0;
   background:var(--paper);
 }
 
 .type-track{
   width:max-content;
-
   font-family:Georgia,serif;
-  font-size:clamp(72px,14vw,190px);
-
-  line-height:.8;
-  letter-spacing:-.06em;
+  font-size:clamp(72px,14vw,185px);
+  line-height:.82;
+  letter-spacing:-.055em;
 
   color:transparent;
+  -webkit-text-stroke:1px rgba(38,31,25,.24);
 
-  -webkit-text-stroke:
-    1px rgba(35,31,26,.23);
-
-  animation:typeMove 28s linear infinite;
+  animation:typeMove 30s linear infinite;
 }
 
 @keyframes typeMove{
-  to{
-    transform:translateX(-35%);
-  }
+  to{transform:translateX(-35%)}
 }
 
 
 /* =========================================================
-   PROCESS - SCROLL EXPERIENCE
+   BAKERY PROCESS
 ========================================================= */
 
-.process-section{
-  padding:0;
-
-  background:var(--dark);
+.process{
+  background:#11110f;
   color:white;
+}
+
+.process .eyebrow{
+  color:#cdb89e;
 }
 
 .process-head{
-  padding:110px 0 65px;
+  margin-bottom:80px;
 }
 
-.process-head .eyebrow{
-  color:#cbb69f;
+.process .lead{
+  color:#d8d3cc;
 }
 
-.process-stage{
-  position:relative;
+.process-list{
+  display:grid;
+  gap:100px;
 }
 
 .process-item{
-  position:relative;
-
-  min-height:100svh;
-
-  display:flex;
-  align-items:flex-end;
-
-  overflow:hidden;
-
-  border-top:
-    1px solid rgba(255,255,255,.12);
+  width:min(1000px,100%);
+  margin:auto;
 }
 
-.process-item img{
-  position:absolute;
-  inset:0;
+.process-photo{
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
   width:100%;
-  height:100%;
-
-  object-fit:cover;
+  overflow:hidden;
+  background:#181816;
 }
 
-.process-item:after{
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,.04) 30%,
-      rgba(0,0,0,.82) 100%
-    );
+.process-photo img{
+  width:auto;
+  max-width:100%;
+  height:auto;
+  max-height:72vh;
+  object-fit:contain;
 }
 
-.process-info{
-  position:relative;
-  z-index:2;
-
-  width:min(1120px,88vw);
-  margin:auto;
-
-  padding-bottom:9vh;
+.process-copy{
+  display:grid;
+  grid-template-columns:130px 1fr;
+  gap:25px;
+  padding-top:24px;
 }
 
 .process-num{
+  padding-top:7px;
+  color:#baa890;
   font-family:Georgia,serif;
+  font-size:11px;
+  letter-spacing:.16em;
+}
 
-  font-size:12px;
+.process-copy h3{
+  margin:0 0 8px;
+  font-family:Georgia,"Yu Mincho",serif;
+  font-size:clamp(30px,4.5vw,50px);
+  font-weight:400;
+}
+
+.process-copy p{
+  max-width:570px;
+  margin:0;
+  color:#d8d3cc;
+}
+
+.process-progress{
+  margin-top:14px;
+  color:#82766b;
+  font-family:Georgia,serif;
+  font-size:10px;
   letter-spacing:.2em;
 }
 
-.process-info h3{
-  margin:5px 0 10px;
-
-  font-family:Georgia,"Yu Mincho",serif;
-
-  font-size:clamp(48px,8vw,95px);
-  font-weight:400;
-  line-height:1;
-}
-
-.process-info p{
-  max-width:500px;
-  margin:0;
-
-  font-size:15px;
-}
-
-.process-rail{
-  position:fixed;
-  z-index:50;
-
-  right:22px;
-  top:50%;
-
-  display:none;
-
-  transform:translateY(-50%);
-}
-
-.process-rail.active{
-  display:block;
-}
-
-.process-dot{
-  width:6px;
-  height:6px;
-
-  margin:13px 0;
-
-  border-radius:50%;
-
-  background:rgba(255,255,255,.35);
-
-  transition:
-    transform .3s,
-    background .3s;
-}
-
-.process-dot.active{
-  background:white;
-  transform:scale(1.8);
-}
-
 
 /* =========================================================
-   MOVIE
-========================================================= */
-
-.movie{
-  overflow:hidden;
-
-  background:#0f0f0e;
-  color:white;
-}
-
-.movie .eyebrow{
-  color:#cbb69f;
-}
-
-.movie-intro{
-  max-width:700px;
-
-  color:#cfcac3;
-}
-
-.movie-frame{
-  position:relative;
-
-  width:100%;
-  aspect-ratio:16/9;
-
-  margin-top:50px;
-
-  overflow:hidden;
-
-  background:black;
-
-  box-shadow:
-    0 40px 100px rgba(0,0,0,.45);
-}
-
-.movie-frame iframe{
-  position:absolute;
-  inset:0;
-
-  width:100%;
-  height:100%;
-
-  border:0;
-}
-
-
-/* =========================================================
-   STAFF VOICE
+   VOICE
 ========================================================= */
 
 .voice{
   position:relative;
-
   overflow:hidden;
-
-  background:#181612;
+  background:#191713;
   color:white;
 }
 
 .voice-bg{
   position:absolute;
   inset:0;
-
   width:100%;
   height:100%;
-
   object-fit:cover;
-
-  opacity:.16;
+  opacity:.12;
 }
 
 .voice:after{
   content:"";
-
   position:absolute;
   inset:0;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(18,16,13,.85),
-      rgba(18,16,13,.97)
-    );
+  background:linear-gradient(
+    135deg,
+    rgba(18,16,13,.83),
+    rgba(18,16,13,.97)
+  );
 }
 
-.voice-content{
+.voice-inner{
   position:relative;
   z-index:2;
-
   max-width:820px;
 }
 
 .voice .eyebrow{
-  color:#cbb69f;
+  color:#cdb89e;
 }
 
 .voice-block{
-  padding:35px 0;
-
-  border-bottom:
-    1px solid rgba(255,255,255,.14);
+  padding:32px 0;
+  border-bottom:1px solid rgba(255,255,255,.13);
 }
 
 .voice-block h3{
-  margin:0 0 15px;
-
+  margin:0 0 14px;
   font-size:18px;
   line-height:1.7;
 }
 
 .voice-block p{
   margin:0;
-
-  color:#e3ded7;
+  color:#e0dbd4;
 }
 
 
@@ -1005,26 +759,16 @@ section{
 
 .numbers{
   display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
-  margin-top:45px;
-
-  border:
-    1px solid var(--line);
+  grid-template-columns:repeat(4,1fr);
+  margin-top:42px;
+  border:1px solid var(--line);
 }
 
 .number{
-  padding:45px 15px;
-
-  background:
-    rgba(255,255,255,.72);
-
+  padding:42px 12px;
+  background:rgba(255,255,255,.7);
   text-align:center;
-
-  border-right:
-    1px solid var(--line);
+  border-right:1px solid var(--line);
 }
 
 .number:last-child{
@@ -1033,53 +777,47 @@ section{
 
 .number strong{
   display:block;
-
   margin-bottom:7px;
-
   font-family:Georgia,serif;
-
-  font-size:36px;
+  font-size:34px;
   font-weight:400;
   line-height:1.2;
 }
 
 
 /* =========================================================
-   INFORMATION
+   INFO / SHIFT / TRAINING
 ========================================================= */
 
-.info-section{
+.info{
   background:var(--paper);
 }
 
 .notice{
   margin:30px 0;
-
-  padding:27px;
-
+  padding:26px;
   background:white;
-
-  border-left:
-    3px solid var(--brown);
+  border-left:3px solid var(--brown);
 }
 
+
+/* =========================================================
+   FAQ
+========================================================= */
+
 .faq{
-  margin-top:60px;
+  margin-top:45px;
 }
 
 .faq details{
   padding:20px 0;
-
-  border-bottom:
-    1px solid var(--line);
+  border-bottom:1px solid var(--line);
 }
 
 .faq summary{
   cursor:pointer;
-
-  font-weight:700;
-
   list-style:none;
+  font-weight:700;
 }
 
 .faq summary::-webkit-details-marker{
@@ -1088,9 +826,7 @@ section{
 
 .faq summary:after{
   content:"+";
-
   float:right;
-
   font-size:20px;
   font-weight:400;
 }
@@ -1103,25 +839,22 @@ section{
   padding-right:30px;
 }
 
-.table{
-  margin-top:45px;
 
-  border-top:
-    1px solid var(--line);
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.table{
+  margin-top:60px;
+  border-top:1px solid var(--line);
 }
 
 .row{
   display:grid;
-
-  grid-template-columns:
-    160px 1fr;
-
+  grid-template-columns:155px 1fr;
   gap:20px;
-
-  padding:20px 0;
-
-  border-bottom:
-    1px solid var(--line);
+  padding:19px 0;
+  border-bottom:1px solid var(--line);
 }
 
 
@@ -1131,85 +864,66 @@ section{
 
 .ending{
   position:relative;
-
-  min-height:100svh;
-
+  min-height:95svh;
   display:flex;
   align-items:center;
-
   overflow:hidden;
-
+  background:#111;
   color:white;
   text-align:center;
-
-  background:#111;
 }
 
-.ending-bg{
+.ending-image{
   position:absolute;
   inset:0;
-
   width:100%;
   height:100%;
-
   object-fit:cover;
+  object-position:center;
 }
 
 .ending:after{
   content:"";
-
   position:absolute;
   inset:0;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,.26),
-      rgba(0,0,0,.76)
-    );
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,.20),
+    rgba(0,0,0,.76)
+  );
 }
 
-.ending-content{
+.ending-inner{
   position:relative;
   z-index:2;
-
-  width:min(900px,88vw);
+  width:min(850px,88vw);
   margin:auto;
 }
 
 .ending-en{
-  margin-bottom:20px;
-
+  margin-bottom:18px;
   font-family:Georgia,serif;
-
-  font-size:clamp(11px,1.4vw,15px);
-  letter-spacing:.27em;
+  font-size:11px;
+  letter-spacing:.25em;
 }
 
 .ending h2{
   margin:0;
-
   font-family:Georgia,"Yu Mincho",serif;
-
-  font-size:clamp(45px,7vw,92px);
+  font-size:clamp(44px,7vw,88px);
   font-weight:400;
-  line-height:1.18;
-}
-
-.ending p{
-  margin-top:28px;
+  line-height:1.2;
 }
 
 .entry-button{
   display:inline-flex;
-
   align-items:center;
   justify-content:center;
 
   min-width:220px;
 
   margin-top:30px;
-  padding:17px 34px;
+  padding:16px 34px;
 
   border-radius:999px;
 
@@ -1217,17 +931,15 @@ section{
   color:#171512;
 
   text-decoration:none;
-
   font-size:13px;
   font-weight:800;
   letter-spacing:.08em;
 
-  transition:
-    transform .3s var(--ease);
+  transition:transform .3s var(--ease);
 }
 
 .entry-button:hover{
-  transform:translateY(-4px);
+  transform:translateY(-3px);
 }
 
 
@@ -1245,16 +957,13 @@ section{
 ========================================================= */
 
 footer{
-  padding:32px 5vw;
-
+  padding:30px 5vw;
   display:flex;
   justify-content:space-between;
-
-  background:#0e0d0c;
+  background:#0d0d0c;
   color:white;
-
   font-size:9px;
-  letter-spacing:.16em;
+  letter-spacing:.15em;
 }
 
 
@@ -1274,17 +983,26 @@ footer{
   }
 
   section{
-    padding:78px 0;
+    padding:76px 0;
   }
 
   .heading{
-    font-size:35px;
-    line-height:1.28;
+    font-size:34px;
+    line-height:1.3;
+    margin-bottom:25px;
   }
 
   .lead{
     font-size:14px;
-    line-height:2;
+    line-height:1.95;
+  }
+
+
+  /* NAV */
+
+  .nav{
+    padding-top:
+      calc(16px + env(safe-area-inset-top));
   }
 
 
@@ -1294,28 +1012,24 @@ footer{
     min-height:650px;
   }
 
-  .hero-media{
-    inset:0;
-
-    width:100%;
-    height:100%;
-
-    object-position:50% 55%;
+  .hero-image{
+    object-position:50% 50%;
+    transform:none;
+    animation:none;
   }
 
   .hero-content{
     bottom:
-      calc(72px + env(safe-area-inset-bottom));
+      calc(70px + env(safe-area-inset-bottom));
   }
 
   .hero-title{
-    font-size:clamp(40px,11.7vw,55px);
-    line-height:1.12;
+    font-size:clamp(39px,11.2vw,52px);
+    line-height:1.13;
   }
 
   .hero-sub{
     max-width:310px;
-
     font-size:13px;
   }
 
@@ -1323,171 +1037,23 @@ footer{
     display:none;
   }
 
-  .nav{
-    padding-top:
-      calc(17px + env(safe-area-inset-top));
-  }
-
-  .nav-entry{
-    padding:8px 13px;
-    font-size:9px;
-  }
-
-
-  /* MARQUEE */
-
-  .marquee{
-    padding:14px 0;
-  }
-
-  .marquee-track{
-    animation-duration:31s;
-  }
-
-  .marquee-track span{
-    font-size:13px;
-    letter-spacing:.13em;
-  }
-
 
   /* MESSAGE */
 
   .message-photo{
-    width:100vw;
+    width:92vw;
+    margin-top:42px;
+  }
 
-    height:72svh;
-    min-height:500px;
-
-    margin-left:-6vw;
-    margin-top:45px;
+  .message-photo .photo-frame{
+    width:100%;
   }
 
   .message-photo img{
-    height:110%;
-
-    object-position:center;
-  }
-
-
-  /* CINEMATIC */
-
-  .cinematic-break{
-    height:78svh;
-    min-height:560px;
-  }
-
-  .cinematic-break:after{
-    background:
-      linear-gradient(
-        180deg,
-        rgba(0,0,0,.05) 30%,
-        rgba(0,0,0,.75) 100%
-      );
-  }
-
-  .cinematic-copy{
-    align-self:flex-end;
-
-    padding-bottom:9vh;
-  }
-
-  .cinematic-copy h2{
-    font-size:41px;
-  }
-
-
-  /* JOB */
-
-  .jobs{
-    grid-template-columns:1fr;
-
-    gap:13px;
-  }
-
-  .job{
-    padding:27px 23px;
-  }
-
-  .job h3{
-    font-size:26px;
-  }
-
-  .job p{
-    font-size:13px;
-  }
-
-  .price{
-    font-size:29px;
-  }
-
-
-  /* WORK */
-
-  .work{
-    padding-top:78px;
-  }
-
-  .work-intro{
-    padding-bottom:50px;
-  }
-
-  .story{
-    min-height:88svh;
-  }
-
-  .story-copy{
-    padding-bottom:9vh;
-  }
-
-  .story h3{
-    font-size:46px;
-  }
-
-  .story p{
-    max-width:320px;
-
-    font-size:13px;
-    line-height:1.8;
-  }
-
-
-  /* HUGE TYPE */
-
-  .type-band{
-    padding:30px 0;
-  }
-
-  .type-track{
-    font-size:86px;
-  }
-
-
-  /* PROCESS */
-
-  .process-head{
-    padding:80px 0 55px;
-  }
-
-  .process-item{
-    min-height:86svh;
-  }
-
-  .process-info{
-    padding-bottom:9vh;
-  }
-
-  .process-info h3{
-    font-size:52px;
-  }
-
-  .process-info p{
-    max-width:310px;
-
-    font-size:13px;
-  }
-
-  .process-rail{
-    right:10px;
+    width:100%;
+    height:auto;
+    max-height:none;
+    object-fit:contain;
   }
 
 
@@ -1497,28 +1063,194 @@ footer{
     padding:80px 0;
   }
 
-  .movie-frame{
-    width:100vw;
-
-    margin-left:-6vw;
-    margin-top:35px;
-
-    box-shadow:none;
+  .movie-lead{
+    font-size:25px;
   }
 
   .movie-intro{
+    margin-bottom:32px;
     font-size:13px;
+    line-height:1.9;
+  }
+
+  .movie-frame{
+    width:100vw;
+    margin-left:-6vw;
+    box-shadow:none;
+  }
+
+
+  /* BAKERY BREAK */
+
+  .bakery-break{
+    padding:55px 0;
+  }
+
+  .bakery-break-photo{
+    width:92vw;
+  }
+
+  .bakery-break-photo img{
+    height:auto;
+    object-fit:contain;
+  }
+
+  .bakery-break-copy{
+    position:static;
+    padding:20px 4px 0;
+    color:var(--ink);
+    text-shadow:none;
+  }
+
+  .bakery-break-copy small{
+    color:var(--brown);
+  }
+
+  .bakery-break-copy h2{
+    font-size:34px;
+  }
+
+
+  /* JOBS */
+
+  .jobs{
+    grid-template-columns:1fr;
+    gap:13px;
+  }
+
+  .job{
+    padding:26px 22px;
+  }
+
+  .job h3{
+    font-size:25px;
+  }
+
+  .job p{
+    font-size:13px;
+  }
+
+
+  /* WORK */
+
+  .work{
+    padding:80px 0;
+  }
+
+  .work-head{
+    margin-bottom:55px;
+  }
+
+  .work-list{
+    gap:72px;
+  }
+
+  .work-item{
+    width:100%;
+  }
+
+  .work-photo{
+    width:100%;
+    background:#171715;
+  }
+
+  .work-photo img{
+    width:100%;
+    height:auto;
+    max-height:none;
+    object-fit:contain;
+  }
+
+  .work-copy{
+    display:block;
+    padding-top:17px;
+  }
+
+  .work-num{
+    padding:0;
+    margin-bottom:5px;
+    font-size:9px;
+  }
+
+  .work-copy h3{
+    font-size:28px;
+    margin-bottom:6px;
+  }
+
+  .work-copy p{
+    font-size:13px;
+    line-height:1.8;
+  }
+
+
+  /* TYPE */
+
+  .type-band{
+    padding:28px 0;
+  }
+
+  .type-track{
+    font-size:84px;
+  }
+
+
+  /* PROCESS */
+
+  .process{
+    padding:80px 0;
+  }
+
+  .process-head{
+    margin-bottom:55px;
+  }
+
+  .process-list{
+    gap:78px;
+  }
+
+  .process-item{
+    width:100%;
+  }
+
+  .process-photo{
+    width:100%;
+    background:#171715;
+  }
+
+  .process-photo img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+    max-height:none;
+    object-fit:contain;
+  }
+
+  .process-copy{
+    display:block;
+    padding-top:17px;
+  }
+
+  .process-num{
+    padding:0;
+    margin-bottom:5px;
+    font-size:9px;
+  }
+
+  .process-copy h3{
+    font-size:30px;
+    margin-bottom:6px;
+  }
+
+  .process-copy p{
+    font-size:13px;
+    line-height:1.8;
   }
 
 
   /* VOICE */
 
-  .voice-bg{
-    object-position:center;
-  }
-
   .voice-block{
-    padding:28px 0;
+    padding:27px 0;
   }
 
   .voice-block h3{
@@ -1538,14 +1270,8 @@ footer{
   }
 
   .number{
-    padding:30px 7px;
-
-    border-right:
-      1px solid var(--line);
-
-    border-bottom:
-      1px solid var(--line);
-
+    padding:29px 6px;
+    border-bottom:1px solid var(--line);
     font-size:11px;
   }
 
@@ -1558,15 +1284,14 @@ footer{
   }
 
   .number strong{
-    font-size:28px;
+    font-size:27px;
   }
 
 
-  /* INFO */
+  /* INFORMATION */
 
   .notice{
-    padding:22px 19px;
-
+    padding:21px 18px;
     font-size:13px;
   }
 
@@ -1574,15 +1299,9 @@ footer{
     font-size:13px;
   }
 
-  .faq summary{
-    padding-right:15px;
-  }
-
   .row{
     grid-template-columns:80px 1fr;
-
-    gap:12px;
-
+    gap:11px;
     font-size:12px;
   }
 
@@ -1590,16 +1309,12 @@ footer{
   /* ENDING */
 
   .ending{
-    min-height:92svh;
-  }
-
-  .ending-bg{
-    object-position:center;
+    min-height:88svh;
   }
 
   .ending h2{
-    font-size:41px;
-    line-height:1.27;
+    font-size:39px;
+    line-height:1.3;
   }
 
   .ending p{
@@ -1607,7 +1322,7 @@ footer{
   }
 
 
-  /* MOBILE FIXED ENTRY */
+  /* FIXED ENTRY */
 
   .mobile-entry{
     position:fixed;
@@ -1625,30 +1340,23 @@ footer{
 
     padding:13px 18px;
 
-    border:
-      1px solid rgba(255,255,255,.17);
-
+    border:1px solid rgba(255,255,255,.16);
     border-radius:999px;
 
-    background:
-      rgba(19,18,16,.86);
-
+    background:rgba(18,17,15,.86);
     color:white;
 
     text-decoration:none;
-
     font-size:12px;
     font-weight:800;
-    letter-spacing:.06em;
 
-    box-shadow:
-      0 10px 35px rgba(0,0,0,.28);
+    box-shadow:0 10px 35px rgba(0,0,0,.27);
 
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
   }
 
-  .mobile-entry span:last-child{
+  .mobile-entry .arrow{
     font-family:Georgia,serif;
     font-size:19px;
     font-weight:400;
@@ -1657,46 +1365,28 @@ footer{
 
   footer{
     display:block;
-
     padding:
-      28px 6vw
+      27px 6vw
       calc(95px + env(safe-area-inset-bottom));
   }
 
   footer span{
     display:block;
-
-    margin:4px 0;
+    margin:3px 0;
   }
 
 }
 
 
 /* =========================================================
-   SMALL PHONE
+   SMALL SMARTPHONE
 ========================================================= */
 
 @media(max-width:390px){
 
-  .hero-title{
-    font-size:39px;
-  }
-
-  .heading{
-    font-size:32px;
-  }
-
-  .story h3{
-    font-size:41px;
-  }
-
-  .process-info h3{
-    font-size:47px;
-  }
-
-  .ending h2{
-    font-size:37px;
-  }
+  .hero-title{font-size:38px}
+  .heading{font-size:31px}
+  .ending h2{font-size:36px}
 
 }
 
@@ -1724,6 +1414,7 @@ footer{
 </style>
 </head>
 
+
 <body>
 
 
@@ -1742,46 +1433,38 @@ footer{
     17BAKERY / RECRUIT
   </div>
 
-  <a
-    class="nav-entry"
-    href="#entry"
-  >
+  <a class="nav-entry" href="#entry">
     ENTRY
   </a>
 
 </nav>
 
 
-<!-- =====================================================
+<!-- =========================================================
      HERO
-===================================================== -->
+========================================================= -->
 
 <header class="hero">
 
   <img
-    class="hero-media"
+    class="hero-image"
     src="./uribazenntai.jpg.JPG"
     alt="17Bakeryの売り場"
   >
 
-  <div class="hero-shade"></div>
-  <div class="hero-grain"></div>
+  <div class="hero-overlay"></div>
+
 
   <div class="hero-content">
 
-    <div class="hero-kicker">
+    <div class="hero-small">
       WORK WITH US / INAZAWA
     </div>
 
     <h1 class="hero-title">
 
-      <span>
-        パンをつくる人。
-      </span>
-
-      <span>
-        パンを届ける人。
-      </span>
+      <span>パンをつくる人。</span>
+      <span>パンを届ける人。</span>
 
     </h1>
 
@@ -1791,6 +1474,7 @@ footer{
     </p>
 
   </div>
+
 
   <div class="hero-scroll">
     SCROLL
@@ -1805,34 +1489,23 @@ footer{
 
   <div class="marquee-track">
 
-    <span>
-      17BAKERY　/　CRAFT　/　BAKE　/　SERVE　/　
-    </span>
-
-    <span>
-      17BAKERY　/　CRAFT　/　BAKE　/　SERVE　/　
-    </span>
-
-    <span>
-      17BAKERY　/　CRAFT　/　BAKE　/　SERVE　/　
-    </span>
-
-    <span>
-      17BAKERY　/　CRAFT　/　BAKE　/　SERVE　/　
-    </span>
+    <span>17BAKERY / CRAFT / BAKE / SERVE / WORK WITH US /　</span>
+    <span>17BAKERY / CRAFT / BAKE / SERVE / WORK WITH US /　</span>
+    <span>17BAKERY / CRAFT / BAKE / SERVE / WORK WITH US /　</span>
+    <span>17BAKERY / CRAFT / BAKE / SERVE / WORK WITH US /　</span>
 
   </div>
 
 </div>
 
 
-<!-- =====================================================
+<!-- =========================================================
      MESSAGE
-===================================================== -->
+========================================================= -->
 
 <section class="message">
 
-  <div class="wrap message-copy reveal">
+  <div class="wrap reveal">
 
     <div class="eyebrow">
       MESSAGE / 01
@@ -1897,47 +1570,108 @@ footer{
 
   <div class="message-photo reveal">
 
-    <img
-      src="./sutahhu-uribazenntai.jpg.jpg"
-      alt="17Bakeryのスタッフ"
-      class="parallax-photo"
-    >
+    <div class="photo-frame">
+
+      <img
+        src="./sutahhu-uribazenntai.jpg.jpg"
+        alt="17Bakeryのスタッフと売り場"
+      >
+
+    </div>
 
   </div>
 
 </section>
 
 
-<!-- =====================================================
-     CINEMATIC BREAK
-===================================================== -->
+<!-- =========================================================
+     MOVIE
+========================================================= -->
 
-<div class="cinematic-break">
+<section class="movie">
 
-  <img
-    src="./pan-uriba.jpg"
-    alt="17Bakeryのパン売り場"
-  >
+  <div class="wrap reveal">
 
-  <div class="cinematic-copy reveal">
+    <div class="eyebrow">
+      MOVIE / 02
+    </div>
 
-    <small>
-      OUR BAKERY
-    </small>
+    <div class="movie-lead">
+      まずは、17Bakeryを<br>
+      見てください。
+    </div>
 
-    <h2>
-      焼きたてのパンに、<br>
-      囲まれて働く。
+    <h2 class="heading">
+      動画で見る、<br>
+      17Bakery。
     </h2>
+
+    <p class="movie-intro">
+
+      写真だけでは伝わらない、
+      お店の空気があります。
+
+      <br><br>
+
+      パンが並ぶ売り場や、
+      実際のお店の雰囲気を
+      動画でご覧いただけます。
+
+    </p>
+
+
+    <div class="movie-frame">
+
+      <iframe
+        src="https://www.youtube.com/embed/TQFPIMV6IfU"
+        title="動画で見る17Bakery"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     BAKERY PHOTO
+========================================================= -->
+
+<div class="bakery-break">
+
+  <div class="bakery-break-photo reveal">
+
+    <img
+      src="./pan-uriba.jpg"
+      alt="17Bakeryのパン売り場"
+    >
+
+    <div class="bakery-break-copy">
+
+      <small>
+        OUR BAKERY
+      </small>
+
+      <h2>
+        焼きたてのパンに、<br>
+        囲まれて働く。
+      </h2>
+
+    </div>
 
   </div>
 
 </div>
 
 
-<!-- =====================================================
+<!-- =========================================================
      RECRUIT
-===================================================== -->
+========================================================= -->
 
 <section class="recruit">
 
@@ -1946,7 +1680,7 @@ footer{
     <div class="reveal">
 
       <div class="eyebrow">
-        RECRUIT / 02
+        RECRUIT / 03
       </div>
 
       <h2 class="heading">
@@ -1957,6 +1691,7 @@ footer{
 
 
     <div class="jobs">
+
 
       <article class="job reveal">
 
@@ -1969,12 +1704,12 @@ footer{
         </h3>
 
         <p>
-          分割・成形・焼成・仕上げなど、
+          仕込み・分割・成形・焼成・仕上げなど、
           パン製造に関わる仕事です。
         </p>
 
         <p>
-          さまざまなパンづくりの工程を
+          パンづくりのさまざまな工程を
           経験できます。
         </p>
 
@@ -2018,6 +1753,7 @@ footer{
 
       </article>
 
+
     </div>
 
   </div>
@@ -2025,164 +1761,210 @@ footer{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      SALES WORK
-===================================================== -->
+========================================================= -->
 
 <section class="work">
 
-  <div class="wrap work-intro reveal">
+  <div class="wrap">
 
-    <div class="eyebrow">
-      SALES WORK / 03
+
+    <div class="work-head reveal">
+
+      <div class="eyebrow">
+        SALES WORK / 04
+      </div>
+
+      <h2 class="heading">
+        売り場の仕事。
+      </h2>
+
+      <p class="lead">
+
+        最初は基本となるレジ業務から覚えていきます。
+
+        <br><br>
+
+        慣れてきたら、
+        品出し・洗い物など、
+        少しずつできる仕事を増やしていきます。
+
+        <br><br>
+
+        基本的には、
+
+        <strong>
+          レジ・品出し・洗い物の3ポジションを
+          1時間ごとにローテーション。
+        </strong>
+
+      </p>
+
     </div>
 
-    <h2 class="heading">
-      売り場の仕事。
-    </h2>
 
-    <p class="lead">
-
-      最初は基本となるレジ業務から覚えていきます。
-
-      <br><br>
-
-      慣れてきたら、
-      品出し・洗い物など、
-      少しずつできる仕事を増やしていきます。
-
-      <br><br>
-
-      基本的には、
-
-      <strong>
-        レジ・品出し・洗い物の3ポジションを
-        1時間ごとにローテーション。
-      </strong>
-
-    </p>
-
-  </div>
+    <div class="work-list">
 
 
-  <div class="work-stories">
+      <!-- 01 -->
+
+      <article class="work-item reveal">
+
+        <div class="work-photo">
+
+          <img
+            src="./reji.jpg.png"
+            alt="レジ接客"
+          >
+
+        </div>
+
+        <div class="work-copy">
+
+          <div class="work-num">
+            01 / REGISTER
+          </div>
+
+          <div>
+
+            <h3>
+              レジ・接客
+            </h3>
+
+            <p>
+              丁寧さと正確さを大切にしながら、
+              お客様をお迎えします。
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
 
 
-    <article class="story">
+      <!-- 02 -->
 
-      <img
-        src="./reji.jpg.png"
-        alt="レジ接客"
-      >
+      <article class="work-item reveal">
 
-      <div class="story-copy">
+        <div class="work-photo">
 
-        <span class="story-index">
-          01 / REGISTER
-        </span>
+          <img
+            src="./sinadasi.jpg"
+            alt="品出し"
+          >
 
-        <h3>
-          レジ・接客
-        </h3>
+        </div>
 
-        <p>
-          丁寧さと正確さを大切にしながら、
-          お客様をお迎えします。
-        </p>
+        <div class="work-copy">
 
-      </div>
+          <div class="work-num">
+            02 / DISPLAY
+          </div>
 
-    </article>
+          <div>
 
+            <h3>
+              品出し
+            </h3>
 
-    <article class="story">
+            <p>
+              焼き上がったパンを補充し、
+              パンがたくさん並ぶ売り場をつくります。
+            </p>
 
-      <img
-        src="./sinadasi.jpg"
-        alt="品出し"
-      >
+          </div>
 
-      <div class="story-copy">
+        </div>
 
-        <span class="story-index">
-          02 / DISPLAY
-        </span>
-
-        <h3>
-          品出し
-        </h3>
-
-        <p>
-          焼き上がったパンを補充し、
-          パンがたくさん並ぶ売り場をつくります。
-        </p>
-
-      </div>
-
-    </article>
+      </article>
 
 
-    <article class="story">
+      <!-- 03 -->
 
-      <img
-        src="./araimono.jpg"
-        alt="洗い物"
-      >
+      <article class="work-item reveal">
 
-      <div class="story-copy">
+        <div class="work-photo">
 
-        <span class="story-index">
-          03 / SUPPORT
-        </span>
+          <img
+            src="./araimono.jpg"
+            alt="洗い物"
+          >
 
-        <h3>
-          洗い物
-        </h3>
+        </div>
 
-        <p>
-          洗い物や片付けを行い、
-          チーム全体の仕事を支えます。
-        </p>
+        <div class="work-copy">
 
-      </div>
+          <div class="work-num">
+            03 / SUPPORT
+          </div>
 
-    </article>
+          <div>
+
+            <h3>
+              洗い物・サポート
+            </h3>
+
+            <p>
+              洗い物や片付けを行い、
+              チーム全体の仕事を支えます。
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
 
 
-    <article class="story">
+      <!-- 04 -->
 
-      <img
-        src="./ahukurodume.jpg"
-        alt="袋詰め"
-      >
+      <article class="work-item reveal">
 
-      <div class="story-copy">
+        <div class="work-photo">
 
-        <span class="story-index">
-          04 / PACKING
-        </span>
+          <img
+            src="./ahukurodume.jpg"
+            alt="袋詰め"
+          >
 
-        <h3>
-          袋詰め
-        </h3>
+        </div>
 
-        <p>
-          パンを丁寧に袋へ入れ、
-          お客様へお渡しする準備をします。
-        </p>
+        <div class="work-copy">
 
-      </div>
+          <div class="work-num">
+            04 / PACKING
+          </div>
 
-    </article>
+          <div>
+
+            <h3>
+              袋詰め
+            </h3>
+
+            <p>
+              パンを丁寧に袋へ入れ、
+              お客様へお渡しする準備をします。
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
 
   </div>
 
 </section>
 
 
-<!-- =====================================================
-     HUGE TYPE
-===================================================== -->
+<!-- =========================================================
+     GIANT TYPE
+========================================================= -->
 
 <div class="type-band">
 
@@ -2193,18 +1975,19 @@ footer{
 </div>
 
 
-<!-- =====================================================
+<!-- =========================================================
      BAKERY PROCESS
-===================================================== -->
+========================================================= -->
 
-<section class="process-section">
+<section class="process">
 
-  <div class="process-head">
+  <div class="wrap">
 
-    <div class="wrap reveal">
+
+    <div class="process-head reveal">
 
       <div class="eyebrow">
-        HOW WE BAKE / 04
+        HOW WE BAKE / 05
       </div>
 
       <h2 class="heading">
@@ -2214,198 +1997,237 @@ footer{
 
       <p class="lead">
 
-        生地が形になり、
-        オーブンで焼き上がり、
-        最後の仕上げを経て、
-        売り場へ並びます。
+        生地を仕込み、
+        分割し、形をつくる。
+
+        <br>
+
+        オーブンで焼き上げ、
+        最後の仕上げをして売り場へ。
 
       </p>
 
     </div>
 
-  </div>
+
+    <div class="process-list">
 
 
-  <div class="process-stage">
+      <!-- 01 仕込み -->
 
+      <article class="process-item reveal">
 
-    <article class="process-item">
+        <div class="process-photo">
 
-      <img
-        src="./bunnkatu-2ninn.jpg"
-        alt="パン生地の分割"
-      >
+          <img
+            src="./sikomi.jpg.png"
+            alt="パン生地の仕込み"
+          >
 
-      <div class="process-info">
-
-        <div class="process-num">
-          01 / DIVIDE
         </div>
 
-        <h3>
-          分割
-        </h3>
+        <div class="process-copy">
 
-        <p>
-          生地を商品ごとに、
-          決められた重量へ分割します。
-        </p>
+          <div class="process-num">
+            01 / MIX
+          </div>
 
-      </div>
+          <div>
 
-    </article>
+            <h3>
+              仕込み
+            </h3>
 
+            <p>
+              ミキサーを使って、
+              パン生地を仕込みます。
+            </p>
 
-    <article class="process-item">
+            <div class="process-progress">
+              01 ━━━━━ 02　03　04　05
+            </div>
 
-      <img
-        src="./seikei.jpg.png"
-        alt="パンの成形"
-      >
+          </div>
 
-      <div class="process-info">
-
-        <div class="process-num">
-          02 / SHAPE
         </div>
 
-        <h3>
-          成形
-        </h3>
-
-        <p>
-          パンの種類に合わせて、
-          一つずつ形をつくります。
-        </p>
-
-      </div>
-
-    </article>
+      </article>
 
 
-    <article class="process-item">
+      <!-- 02 分割 -->
 
-      <img
-        src="./syousei.jpg.png"
-        alt="パンの焼成"
-      >
+      <article class="process-item reveal">
 
-      <div class="process-info">
+        <div class="process-photo">
 
-        <div class="process-num">
-          03 / BAKE
+          <img
+            src="./bunnkatu-2ninn.jpg"
+            alt="パン生地の分割"
+          >
+
         </div>
 
-        <h3>
-          焼成
-        </h3>
+        <div class="process-copy">
 
-        <p>
-          オーブンを使って、
-          パンを焼き上げます。
-        </p>
+          <div class="process-num">
+            02 / DIVIDE
+          </div>
 
-      </div>
+          <div>
 
-    </article>
+            <h3>
+              分割
+            </h3>
 
+            <p>
+              生地を商品ごとに、
+              決められた重量へ分割します。
+            </p>
 
-    <article class="process-item">
+            <div class="process-progress">
+              01　02 ━━━━━ 03　04　05
+            </div>
 
-      <img
-        src="./siage.jpg"
-        alt="パンの仕上げ"
-      >
+          </div>
 
-      <div class="process-info">
-
-        <div class="process-num">
-          04 / FINISH
         </div>
 
-        <h3>
-          仕上げ
-        </h3>
+      </article>
 
-        <p>
-          焼き上がったパンを仕上げ、
-          商品を完成させます。
-        </p>
 
-      </div>
+      <!-- 03 成形 -->
 
-    </article>
+      <article class="process-item reveal">
 
+        <div class="process-photo">
+
+          <img
+            src="./seikei.jpg.png"
+            alt="パンの成形"
+          >
+
+        </div>
+
+        <div class="process-copy">
+
+          <div class="process-num">
+            03 / SHAPE
+          </div>
+
+          <div>
+
+            <h3>
+              成形
+            </h3>
+
+            <p>
+              パンの種類に合わせて、
+              一つずつ形をつくっていきます。
+            </p>
+
+            <div class="process-progress">
+              01　02　03 ━━━━━ 04　05
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 04 焼成 -->
+
+      <article class="process-item reveal">
+
+        <div class="process-photo">
+
+          <img
+            src="./syousei.jpg.png"
+            alt="パンの焼成"
+          >
+
+        </div>
+
+        <div class="process-copy">
+
+          <div class="process-num">
+            04 / BAKE
+          </div>
+
+          <div>
+
+            <h3>
+              焼成
+            </h3>
+
+            <p>
+              オーブンを使って、
+              パンを焼き上げます。
+            </p>
+
+            <div class="process-progress">
+              01　02　03　04 ━━━━━ 05
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 05 仕上げ -->
+
+      <article class="process-item reveal">
+
+        <div class="process-photo">
+
+          <img
+            src="./siage.jpg"
+            alt="パンの仕上げ"
+          >
+
+        </div>
+
+        <div class="process-copy">
+
+          <div class="process-num">
+            05 / FINISH
+          </div>
+
+          <div>
+
+            <h3>
+              仕上げ
+            </h3>
+
+            <p>
+              焼き上がったパンを仕上げ、
+              商品を完成させます。
+            </p>
+
+            <div class="process-progress">
+              01　02　03　04　05 ●
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
 
   </div>
 
 </section>
 
 
-<!-- PROCESS DOTS -->
-
-<div class="process-rail">
-
-  <div class="process-dot active"></div>
-  <div class="process-dot"></div>
-  <div class="process-dot"></div>
-  <div class="process-dot"></div>
-
-</div>
-
-
-<!-- =====================================================
-     MOVIE
-===================================================== -->
-
-<section class="movie">
-
-  <div class="wrap reveal">
-
-    <div class="eyebrow">
-      MOVIE / 05
-    </div>
-
-    <h2 class="heading">
-      動画で見る、<br>
-      17Bakery。
-    </h2>
-
-    <p class="movie-intro">
-
-      写真だけでは伝わらない、
-      17Bakeryの空気感。
-
-      <br><br>
-
-      パンが並ぶ売り場や、
-      実際のお店の雰囲気を
-      動画でご覧いただけます。
-
-    </p>
-
-
-    <div class="movie-frame">
-
-      <iframe
-        src="https://www.youtube.com/embed/TQFPIMV6IfU"
-        title="動画で見る17Bakery"
-        loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
+<!-- =========================================================
      STAFF VOICE
-===================================================== -->
+========================================================= -->
 
 <section class="voice">
 
@@ -2415,7 +2237,7 @@ footer{
     alt=""
   >
 
-  <div class="wrap voice-content reveal">
+  <div class="wrap voice-inner reveal">
 
     <div class="eyebrow">
       STAFF VOICE / 06
@@ -2440,8 +2262,7 @@ footer{
 
         <br><br>
 
-        スタッフのみんなが明るく生き生きと
-        働いている姿も印象的で、
+        スタッフのみんなが明るく生き生きと働いている姿も印象的で、
         「私もこのチームの一員として働きたい」
         と思ったのがきっかけです。
       </p>
@@ -2505,9 +2326,9 @@ footer{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      NUMBERS
-===================================================== -->
+========================================================= -->
 
 <section class="numbers-section">
 
@@ -2552,11 +2373,11 @@ footer{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      SHIFT
-===================================================== -->
+========================================================= -->
 
-<section class="info-section">
+<section class="info">
 
   <div class="wrap reveal">
 
@@ -2617,6 +2438,7 @@ footer{
 
     </div>
 
+
     <p>
       勤務可能日時がかなり限定される場合は、
       希望を出していただいても
@@ -2634,9 +2456,9 @@ footer{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      TRAINING
-===================================================== -->
+========================================================= -->
 
 <section class="recruit">
 
@@ -2711,8 +2533,7 @@ footer{
 
     <p>
       ただし、
-      150時間働けば自動的に研修終了という
-      制度ではありません。
+      150時間働けば自動的に研修終了という制度ではありません。
     </p>
 
     <p>
@@ -2730,8 +2551,7 @@ footer{
       基準を早く満たした場合には、
 
       <strong>
-        150時間より早く研修期間を
-        終了する場合もあります。
+        150時間より早く研修期間を終了する場合もあります。
       </strong>
     </p>
 
@@ -2740,11 +2560,11 @@ footer{
 </section>
 
 
-<!-- =====================================================
-     FAQ + DETAILS
-===================================================== -->
+<!-- =========================================================
+     FAQ / DETAILS
+========================================================= -->
 
-<section class="info-section">
+<section class="info">
 
   <div class="wrap reveal">
 
@@ -2759,6 +2579,7 @@ footer{
 
     <div class="faq">
 
+
       <details open>
 
         <summary>
@@ -2767,8 +2588,7 @@ footer{
 
         <p>
           もちろん大丈夫です。
-          ほとんどのスタッフが
-          未経験からスタートしています。
+          ほとんどのスタッフが未経験からスタートしています。
         </p>
 
       </details>
@@ -2797,8 +2617,7 @@ footer{
 
         <p>
           はい。
-          1日1時間〜最大6時間まで
-          勤務希望を出していただけます。
+          1日1時間〜最大6時間まで勤務希望を出していただけます。
           3時間程度の勤務も可能です。
         </p>
 
@@ -2814,8 +2633,7 @@ footer{
         <p>
           売り場スタッフは150時間を
           研修期間の目安としています。
-          習熟状況によって
-          早く終了する場合があります。
+          習熟状況によって早く終了する場合があります。
         </p>
 
       </details>
@@ -2853,8 +2671,7 @@ footer{
 
         <p>
           <strong>ピアス・アクセサリー：</strong><br>
-          異物混入防止のため
-          勤務中は外していただきます。
+          異物混入防止のため勤務中は外していただきます。
         </p>
 
         <p>
@@ -2878,11 +2695,11 @@ footer{
 
           <br><br>
 
-          1回の購入につき
-          最大400円の割引です。
+          1回の購入につき最大400円の割引です。
         </p>
 
       </details>
+
 
     </div>
 
@@ -2896,16 +2713,12 @@ footer{
 
       <div class="row">
         <b>売り場</b>
-        <span>
-          パートスタッフ／土日に勤務できる方
-        </span>
+        <span>パートスタッフ／土日に勤務できる方</span>
       </div>
 
       <div class="row">
         <b>売り場時給</b>
-        <span>
-          1,500円／研修中1,200円
-        </span>
+        <span>1,500円／研修中1,200円</span>
       </div>
 
       <div class="row">
@@ -2936,22 +2749,19 @@ footer{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      ENDING
-===================================================== -->
+========================================================= -->
 
-<section
-  class="ending"
-  id="entry"
->
+<section class="ending" id="entry">
 
   <img
-    class="ending-bg"
+    class="ending-image"
     src="./pan-uriba.jpg"
     alt="17Bakeryのパン売り場"
   >
 
-  <div class="ending-content reveal">
+  <div class="ending-inner reveal">
 
     <div class="ending-en">
       MAKE BREAD / MAKE SOMEONE'S DAY
@@ -3005,7 +2815,7 @@ footer{
     17Bakeryに応募する
   </span>
 
-  <span>
+  <span class="arrow">
     →
   </span>
 
@@ -3033,36 +2843,27 @@ footer{
    REVEAL
 ========================================================= */
 
-const revealObserver =
-new IntersectionObserver(
-
+const observer = new IntersectionObserver(
   entries => {
 
     entries.forEach(entry => {
 
       if(entry.isIntersecting){
-
-        entry.target.classList.add("is-visible");
-
+        entry.target.classList.add("visible");
       }
 
     });
 
   },
-
   {
-    threshold:.12
+    threshold:.10
   }
-
 );
 
+
 document
-.querySelectorAll(".reveal,.story")
-.forEach(el => {
-
-  revealObserver.observe(el);
-
-});
+.querySelectorAll(".reveal,.photo-frame")
+.forEach(el => observer.observe(el));
 
 
 /* =========================================================
@@ -3072,187 +2873,73 @@ document
 const progressBar =
 document.querySelector(".progress-bar");
 
+
 function updateProgress(){
 
-  const scrollTop =
-    window.scrollY;
-
-  const docHeight =
+  const max =
     document.documentElement.scrollHeight -
     window.innerHeight;
 
-  const progress =
-    docHeight > 0
-    ? scrollTop / docHeight
+  const value =
+    max > 0
+    ? window.scrollY / max
     : 0;
 
   progressBar.style.width =
-    `${progress * 100}%`;
+    `${value * 100}%`;
 
 }
 
 
 /* =========================================================
-   HERO + PHOTO PARALLAX
+   SUBTLE TEXT / TYPE MOVEMENT
+   写真は動かしすぎない
 ========================================================= */
 
-const hero =
-document.querySelector(".hero-media");
-
-const parallaxPhotos =
-document.querySelectorAll(".parallax-photo");
-
-function updateParallax(){
-
-  const y =
-    window.scrollY;
-
-  if(
-    hero &&
-    y < window.innerHeight
-  ){
-
-    const speed =
-      window.innerWidth <= 760
-      ? .025
-      : .07;
-
-    hero.style.translate =
-      `0 ${y * speed}px`;
-
-  }
+const typeTrack =
+document.querySelector(".type-track");
 
 
-  parallaxPhotos.forEach(photo => {
+function updateScrollEffects(){
+
+  updateProgress();
+
+  /*
+    写真は固定。
+    巨大文字だけスクロールに
+    少し反応させる。
+  */
+
+  if(typeTrack){
 
     const rect =
-      photo.parentElement
+      typeTrack.parentElement
       .getBoundingClientRect();
 
-    const center =
-      rect.top +
-      rect.height / 2 -
-      window.innerHeight / 2;
+    if(
+      rect.top < window.innerHeight &&
+      rect.bottom > 0
+    ){
 
-    const movement =
-      center * -.035;
+      const movement =
+        (window.innerHeight - rect.top) * .025;
 
-    photo.style.transform =
-      `translateY(${movement}px)`;
+      typeTrack.style.translate =
+        `${-movement}px 0`;
 
-  });
+    }
+
+  }
 
 }
 
 
 /* =========================================================
-   PROCESS NAVIGATION
-========================================================= */
-
-const processSection =
-document.querySelector(".process-section");
-
-const processItems =
-[
-  ...document.querySelectorAll(".process-item")
-];
-
-const processRail =
-document.querySelector(".process-rail");
-
-const processDots =
-[
-  ...document.querySelectorAll(".process-dot")
-];
-
-
-function updateProcess(){
-
-  if(!processSection){
-    return;
-  }
-
-  const sectionRect =
-    processSection.getBoundingClientRect();
-
-
-  const inside =
-    sectionRect.top <
-    window.innerHeight * .55
-    &&
-    sectionRect.bottom >
-    window.innerHeight * .45;
-
-
-  processRail.classList
-  .toggle(
-    "active",
-    inside
-  );
-
-
-  if(!inside){
-    return;
-  }
-
-
-  let closestIndex = 0;
-  let closestDistance = Infinity;
-
-
-  processItems.forEach(
-    (item,index) => {
-
-      const rect =
-        item.getBoundingClientRect();
-
-      const center =
-        rect.top +
-        rect.height / 2;
-
-      const distance =
-        Math.abs(
-          center -
-          window.innerHeight / 2
-        );
-
-
-      if(
-        distance <
-        closestDistance
-      ){
-
-        closestDistance =
-          distance;
-
-        closestIndex =
-          index;
-
-      }
-
-    }
-  );
-
-
-  processDots.forEach(
-    (dot,index) => {
-
-      dot.classList.toggle(
-        "active",
-        index === closestIndex
-      );
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   SCROLL LOOP
+   PERFORMANCE LOOP
 ========================================================= */
 
 let ticking = false;
+
 
 function onScroll(){
 
@@ -3263,17 +2950,13 @@ function onScroll(){
   ticking = true;
 
 
-  requestAnimationFrame(
-    () => {
+  requestAnimationFrame(() => {
 
-      updateProgress();
-      updateParallax();
-      updateProcess();
+    updateScrollEffects();
 
-      ticking = false;
+    ticking = false;
 
-    }
-  );
+  });
 
 }
 
@@ -3281,21 +2964,20 @@ function onScroll(){
 window.addEventListener(
   "scroll",
   onScroll,
-  {
-    passive:true
-  }
+  {passive:true}
 );
 
 
 window.addEventListener(
   "resize",
-  onScroll
+  updateScrollEffects
 );
 
 
-onScroll();
+updateScrollEffects();
 
 </script>
+
 
 </body>
 </html>
