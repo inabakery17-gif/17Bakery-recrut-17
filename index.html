@@ -1,0 +1,1326 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RECRUIT | 17Bakery</title>
+<meta name="description" content="愛知県稲沢市 17Bakeryの採用ページ。パン製造正社員・土日売り場パートスタッフを募集しています。">
+
+<style>
+:root{
+  --ink:#211d19;
+  --paper:#f5efe5;
+  --cream:#fffaf3;
+  --brown:#76583e;
+  --line:#d8cbbb;
+  --accent:#b89a77;
+  --dark:#29241f;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  background:var(--paper);
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic","YuGothic",sans-serif;
+  line-height:1.85;
+}
+img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.wrap{
+  width:min(1100px,88vw);
+  margin:auto;
+}
+section{padding:90px 0}
+.kicker{
+  font-size:12px;
+  letter-spacing:.23em;
+  color:var(--brown);
+  font-weight:700;
+}
+.section-title{
+  font-family:Georgia,"Yu Mincho",serif;
+  font-size:clamp(32px,5vw,58px);
+  font-weight:500;
+  line-height:1.25;
+  margin:6px 0 25px;
+}
+.lead{
+  max-width:800px;
+  font-size:17px;
+}
+
+/* HERO */
+.hero{
+  min-height:92vh;
+  position:relative;
+  color:white;
+  background:
+    linear-gradient(rgba(0,0,0,.12),rgba(0,0,0,.62)),
+    url("uribazentai.jpg.JPG") center/cover no-repeat;
+}
+.brand{
+  position:absolute;
+  top:30px;
+  left:6vw;
+  font-weight:700;
+  letter-spacing:.18em;
+}
+.hero-copy{
+  position:absolute;
+  left:6vw;
+  bottom:10vh;
+  width:min(850px,88vw);
+}
+.hero h1{
+  font-family:Georgia,"Yu Mincho",serif;
+  font-weight:500;
+  font-size:clamp(43px,8vw,90px);
+  line-height:1.08;
+  margin:10px 0 22px;
+}
+.hero p{
+  font-size:clamp(16px,2vw,21px);
+}
+
+/* PHOTOS */
+.full-photo{
+  height:min(68vw,720px);
+}
+.photo-pair{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:14px;
+  margin-top:40px;
+}
+.photo-pair .large{height:600px}
+.photo-pair .small{height:600px}
+.photo-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:35px;
+}
+.photo-card{
+  height:390px;
+  position:relative;
+  overflow:hidden;
+}
+.photo-label{
+  position:absolute;
+  left:15px;
+  bottom:15px;
+  background:rgba(25,22,19,.84);
+  color:white;
+  padding:7px 12px;
+  font-size:12px;
+  letter-spacing:.08em;
+}
+
+/* JOB */
+.cream{background:var(--cream)}
+.two{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+.job{
+  background:white;
+  padding:35px;
+}
+.tag{
+  display:inline-block;
+  background:var(--ink);
+  color:white;
+  padding:5px 13px;
+  font-size:12px;
+  font-weight:700;
+}
+.job h3{
+  font-size:28px;
+  margin:10px 0;
+}
+
+/* WORK */
+.work-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:35px;
+}
+.card{
+  background:white;
+  padding:25px;
+}
+.card h3{
+  font-size:22px;
+  margin:5px 0;
+}
+
+/* VOICE */
+.voice{
+  background:var(--dark);
+  color:white;
+}
+.voice .kicker{color:#d8c2a7}
+.qa{max-width:850px}
+.qa h3{
+  margin:35px 0 8px;
+  font-size:20px;
+}
+.qa p{
+  margin:0;
+  color:#eee;
+}
+
+/* NUMBERS */
+.numbers{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+.number{
+  background:white;
+  padding:28px 15px;
+  text-align:center;
+}
+.number strong{
+  display:block;
+  font-family:Georgia,serif;
+  font-size:31px;
+}
+
+/* NOTICE */
+.notice{
+  background:white;
+  border-left:4px solid var(--accent);
+  padding:22px 25px;
+  margin:28px 0;
+}
+
+/* PROCESS */
+.process{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:40px;
+}
+.process-item{
+  background:white;
+}
+.process-img{
+  height:390px;
+}
+.process-text{
+  padding:22px 24px 25px;
+}
+.process-no{
+  font-size:11px;
+  letter-spacing:.2em;
+  color:var(--brown);
+  font-weight:700;
+}
+.process-text h3{
+  margin:3px 0 6px;
+  font-size:22px;
+}
+
+/* FAQ */
+.faq details{
+  background:white;
+  padding:19px 22px;
+  margin:10px 0;
+}
+.faq summary{
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* TABLE */
+.table{
+  border-top:1px solid var(--line);
+}
+.row{
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:18px;
+  padding:18px 0;
+  border-bottom:1px solid var(--line);
+}
+
+/* CTA */
+.cta{
+  text-align:center;
+  background:#cdb99f;
+}
+.button{
+  display:inline-block;
+  margin-top:18px;
+  background:var(--ink);
+  color:white;
+  padding:18px 42px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:700;
+}
+footer{
+  padding:34px 6vw;
+  background:#1d1b18;
+  color:#eee;
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+}
+
+@media(max-width:760px){
+  section{padding:65px 0}
+  .two,.work-grid,.numbers,.process,.photo-pair,.photo-grid{
+    grid-template-columns:1fr;
+  }
+  .photo-pair .large,
+  .photo-pair .small{
+    height:430px;
+  }
+  .photo-card{height:390px}
+  .process-img{height:370px}
+  .row{grid-template-columns:95px 1fr}
+  .job{padding:25px}
+  footer{
+    display:block;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<header class="hero">
+
+<div class="brand">
+17Bakery / RECRUIT
+</div>
+
+<div class="hero-copy">
+
+<div class="kicker" style="color:white">
+WORK WITH US
+</div>
+
+<h1>
+パンをつくる人。<br>
+パンを届ける人。
+</h1>
+
+<p>
+一人ひとりの仕事がつながって、<br>
+17Bakeryの一日ができています。
+</p>
+
+</div>
+</header>
+
+
+<!-- MESSAGE -->
+<section>
+<div class="wrap">
+
+<div class="kicker">MESSAGE</div>
+
+<h2 class="section-title">
+一緒に、17Bakeryをつくる。
+</h2>
+
+<p class="lead">
+
+17Bakeryは、愛知県稲沢市にあるベーカリーです。
+
+<br><br>
+
+パンをつくる人。<br>
+売り場をつくる人。<br>
+お客様を迎える人。
+
+<br><br>
+
+それぞれの仕事がつながることで、
+17Bakeryというお店ができています。
+
+<br><br>
+
+私たちが採用で大切にしているのは、
+経験だけではありません。
+
+<br><br>
+
+時間や約束を守る。<br>
+教わったことを一つずつ覚える。<br>
+分からないことは確認する。<br>
+周りを見ながら協力する。<br>
+忙しいときほど声を掛け合う。
+
+<br><br>
+
+最初から何でもできる必要はありません。
+
+<br><br>
+
+できなかったことが、
+少しずつできるようになる。
+
+<br><br>
+
+そんな成長を楽しめる方と、
+一緒に働きたいと思っています。
+
+</p>
+
+<div class="photo-pair">
+
+<div class="large">
+<img src="sutahhu-uribazentai.jpg.jpg"
+alt="17Bakeryで働くスタッフと売り場">
+</div>
+
+<div class="small">
+<img src="pan-uriba.jpg"
+alt="17Bakeryのパン売り場">
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- RECRUIT -->
+<section class="cream">
+<div class="wrap">
+
+<div class="kicker">RECRUIT</div>
+
+<h2 class="section-title">
+現在の募集
+</h2>
+
+<div class="two">
+
+<article class="job">
+
+<span class="tag">正社員</span>
+
+<h3>パン製造スタッフ</h3>
+
+<p>
+仕込み・分割・成形・焼成・仕上げなど、
+パン製造に関わる仕事です。
+</p>
+
+<p>
+大型ミキサーを使った生地づくりから、
+分割、成形、焼成、仕上げまで、
+さまざまな工程を経験できます。
+</p>
+
+<p>
+<strong>
+現在、製造部門は正社員のみ募集しています。
+</strong>
+</p>
+
+</article>
+
+
+<article class="job">
+
+<span class="tag">パート</span>
+
+<h3>売り場スタッフ</h3>
+
+<p>
+<strong>
+現在、土日に勤務できる方を募集しています。
+</strong>
+</p>
+
+<p>
+<strong style="font-size:25px">
+時給 1,500円
+</strong>
+</p>
+
+<p>
+※研修期間中は時給1,200円
+</p>
+
+<p>
+レジ・袋詰め・商品のお渡し・品出し・
+売り場整理・洗い物・片付け・清掃などを担当します。
+</p>
+
+</article>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- SALES -->
+<section>
+<div class="wrap">
+
+<div class="kicker">SALES WORK</div>
+
+<h2 class="section-title">
+売り場の仕事。
+</h2>
+
+<p class="lead">
+
+最初は基本となるレジ業務から覚えていきます。
+
+<br><br>
+
+慣れてきたら、
+<strong>品出し・洗い物</strong>など、
+少しずつできる仕事を増やしていきます。
+
+<br><br>
+
+基本的には、
+<strong>
+レジ・品出し・洗い物の3ポジションを
+1時間ごとにローテーション。
+</strong>
+
+<br><br>
+
+一日中ずっと同じ作業をするのではなく、
+時間ごとに仕事内容が変わります。
+
+</p>
+
+
+<div class="photo-grid">
+
+<div class="photo-card">
+<img src="reji.jpg.png" alt="レジでの接客">
+<div class="photo-label">レジ・接客</div>
+</div>
+
+<div class="photo-card">
+<img src="ahukurodume.jpg" alt="パンの袋詰め">
+<div class="photo-label">袋詰め</div>
+</div>
+
+<div class="photo-card">
+<img src="sinadasi.jpg" alt="パンの品出し">
+<div class="photo-label">品出し</div>
+</div>
+
+</div>
+
+
+<div class="work-grid">
+
+<div class="card">
+<div class="kicker">01 / REGISTER</div>
+<h3>レジ</h3>
+<p>
+丁寧さと正確さを大切にしながら、
+お客様をお迎えします。
+</p>
+</div>
+
+<div class="card">
+<div class="kicker">02 / DISPLAY</div>
+<h3>品出し</h3>
+<p>
+焼き上がったパンを補充し、
+たくさんのパンが並ぶ売り場をつくります。
+</p>
+</div>
+
+<div class="card">
+<div class="kicker">03 / SUPPORT</div>
+<h3>洗い物・サポート</h3>
+<p>
+次の仕事がスムーズに進むよう、
+チーム全体を支える仕事です。
+</p>
+</div>
+
+</div>
+
+
+<div class="photo-pair">
+
+<div class="large">
+<img src="housou.jpg.png" alt="パンの包装作業">
+</div>
+
+<div class="small">
+<img src="pan-uriba.jpg" alt="パンが並ぶ売り場">
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- PRODUCTION -->
+<section class="cream">
+<div class="wrap">
+
+<div class="kicker">BAKERY WORK</div>
+
+<h2 class="section-title">
+パンができるまで。
+</h2>
+
+<p class="lead">
+
+製造スタッフは、
+生地の仕込みから焼き上げ・仕上げまで、
+パンづくりのさまざまな工程を担当します。
+
+<br><br>
+
+一つの工程だけではなく、
+少しずつ仕事の幅を広げていきます。
+
+</p>
+
+
+<div class="process">
+
+<div class="process-item">
+
+<div class="process-img">
+<img src="sikomi.jpg.png" alt="パン生地の仕込み">
+</div>
+
+<div class="process-text">
+<div class="process-no">01 / MIXING</div>
+<h3>仕込み</h3>
+<p>
+材料を計量し、
+ミキサーを使ってパン生地を仕込みます。
+</p>
+</div>
+
+</div>
+
+
+<div class="process-item">
+
+<div class="process-img">
+<img src="bunnkatu-2ninn.jpg" alt="二人で生地を分割する様子">
+</div>
+
+<div class="process-text">
+<div class="process-no">02 / DIVIDING</div>
+<h3>分割</h3>
+<p>
+仕込んだ生地を、
+商品ごとに決められた重量へ分割します。
+</p>
+</div>
+
+</div>
+
+
+<div class="process-item">
+
+<div class="process-img">
+<img src="bunnkatu.jpg.png" alt="パン生地の分割作業">
+</div>
+
+<div class="process-text">
+<div class="process-no">03 / WORK</div>
+<h3>分割・丸め</h3>
+<p>
+生地の状態を確認しながら、
+一つずつ作業を進めます。
+</p>
+</div>
+
+</div>
+
+
+<div class="process-item">
+
+<div class="process-img">
+<img src="keiryou.jpg.png" alt="パン生地の計量">
+</div>
+
+<div class="process-text">
+<div class="process-no">04 / WEIGHING</div>
+<h3>計量</h3>
+<p>
+秤を使いながら、
+決められた重量へ正確に合わせます。
+</p>
+</div>
+
+</div>
+
+
+<div class="process-item">
+
+<div class="process-img">
+<img src="seikei.jpg.png" alt="パンの成形">
+</div>
+
+<div class="process-text">
+<div class="process-no">05 / SHAPING</div>
+<h3>成形</h3>
+<p>
+パンの種類に合わせて、
+一つずつ形をつくっていきます。
+</p>
+</div>
+
+</div>
+
+
+<div class="process-item">
+
+<div class="process-img">
+<img src="syousei.jpg.png" alt="パンの焼成作業">
+</div>
+
+<div class="process-text">
+<div class="process-no">06 / BAKING</div>
+<h3>焼成</h3>
+<p>
+オーブンを使い、
+パンを焼き上げていきます。
+</p>
+</div>
+
+</div>
+
+
+<div class="process-item">
+
+<div class="process-img">
+<img src="siage.jpg" alt="焼き上がったパンの仕上げ">
+</div>
+
+<div class="process-text">
+<div class="process-no">07 / FINISH</div>
+<h3>仕上げ</h3>
+<p>
+焼き上がったパンを、
+商品ごとに仕上げて完成させます。
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- STAFF VOICE -->
+<section class="voice">
+<div class="wrap qa">
+
+<div class="kicker">STAFF VOICE</div>
+
+<h2 class="section-title">
+実際に働くスタッフの声。
+</h2>
+
+<h3>
+Q. どうして17Bakeryで働こうと思ったんですか？
+</h3>
+
+<p>
+
+もともと17Bakeryのパンが好きで、
+パンがおいしく種類も多く、
+活気があって賑やかなお店という印象がありました。
+
+<br><br>
+
+店内にはいつも焼きたてのパンのいい香りがしていて、
+スタッフのみんなが明るく生き生きと働いている姿も印象的でした。
+
+<br><br>
+
+「私もこのチームの一員として働きたい」
+と思ったのがきっかけです。
+
+</p>
+
+
+<h3>
+Q. 実際に働いてみてどうですか？
+</h3>
+
+<p>
+
+正直、かなり忙しいです（笑）。
+
+<br><br>
+
+特に土日はたくさんのお客様に
+ご来店いただきます。
+
+<br><br>
+
+ただ、
+「まだこれしか時間が経っていないの？」
+ではなく、
+「もうこんな時間？」
+というくらい、一日があっという間に過ぎていきます。
+
+<br><br>
+
+スタッフ同士で声を掛け合って、
+忙しい時間をみんなで乗り切ったときには達成感があります。
+
+</p>
+
+
+<h3>
+Q. 大変なところは？
+</h3>
+
+<p>
+
+土日は特にお客様が多いため、
+スピードだけではなく、
+丁寧な接客と正確なレジ操作の両方が必要です。
+
+<br><br>
+
+最初は緊張もありますが、
+仕事に慣れてくると少しずつ周りを見る余裕も生まれてきます。
+
+<br><br>
+
+たくさんのお客様にパンを選んでいただき、
+「ありがとう」と言っていただけることが、
+この仕事のやりがいです。
+
+</p>
+
+</div>
+</section>
+
+
+<!-- NUMBERS -->
+<section class="cream">
+<div class="wrap">
+
+<div class="kicker">NUMBERS</div>
+
+<h2 class="section-title">
+数字で見る17Bakery
+</h2>
+
+<div class="numbers">
+
+<div class="number">
+<strong>約30名</strong>
+スタッフ
+</div>
+
+<div class="number">
+<strong>1,500円</strong>
+土日売り場時給
+</div>
+
+<div class="number">
+<strong>150時間</strong>
+研修の目安
+</div>
+
+<div class="number">
+<strong>20% OFF</strong>
+従業員割引
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- SHIFT -->
+<section>
+<div class="wrap">
+
+<div class="kicker">SHIFT</div>
+
+<h2 class="section-title">
+売り場スタッフの働き方。
+</h2>
+
+<p class="lead">
+
+今回の募集は、
+<strong>土日に勤務できる方</strong>を対象としています。
+
+<br><br>
+
+ただし、
+
+<strong>
+「勤務希望を出した日＝必ず勤務できる」
+という募集ではありません。
+</strong>
+
+<br><br>
+
+現在働いているスタッフの勤務状況を踏まえながら、
+店舗が必要としている曜日・時間帯と、
+皆さんの勤務可能日時を合わせて
+シフトを決定します。
+
+</p>
+
+
+<div class="notice">
+
+<strong>
+例えばこんな働き方があります。
+</strong>
+
+<br><br>
+
+・5:00〜17:00の間で5時間程度
+
+<br>
+
+・7:00〜15:00の間で3時間程度
+
+<br>
+
+・1か月の土日のうち7日程度、勤務希望を出す
+
+<br><br>
+
+勤務可能な曜日や時間帯の幅が広いほど、
+シフトを調整しやすくなります。
+
+</div>
+
+
+<p>
+
+一方、
+
+「8:00〜10:00のみ」<br>
+「月1〜2日のみ」
+
+など勤務可能日時がかなり限定される場合は、
+希望を出していただいても
+勤務できないことがあります。
+
+</p>
+
+<p>
+<strong>
+1日の勤務希望は1時間〜最大6時間。
+</strong>
+</p>
+
+<p>
+3時間程度の勤務も可能です。
+まずは勤務できる曜日・時間帯をご相談ください。
+</p>
+
+</div>
+</section>
+
+
+<!-- TRAINING -->
+<section class="cream">
+<div class="wrap">
+
+<div class="kicker">TRAINING</div>
+
+<h2 class="section-title">
+未経験からでも大丈夫。
+</h2>
+
+<p class="lead">
+
+17Bakeryで働いているスタッフのほとんどが、
+未経験からスタートしています。
+
+<br><br>
+
+入ってすぐに一人でポジションを
+任せることはありません。
+
+<br><br>
+
+仕事に慣れるまでは先輩スタッフがつき、
+<strong>
+マンツーマンで一つずつ教えていきます。
+</strong>
+
+</p>
+
+
+<div class="notice">
+
+<strong>
+約100種類。でも、値段の丸暗記は必要ありません。
+</strong>
+
+<br><br>
+
+商品名を覚える必要はありますが、
+一つひとつの値段を暗記する必要はありません。
+
+<br><br>
+
+レジには商品が
+<strong>イラスト付きで表示</strong>されるため、
+商品を確認しながら操作できます。
+
+</div>
+
+
+<h3>研修期間について</h3>
+
+<p>
+売り場スタッフの研修期間は、
+<strong>150時間を目安</strong>としています。
+</p>
+
+<p>
+研修期間中は
+<strong>時給1,200円</strong>です。
+</p>
+
+<p>
+ただし、
+150時間働けば自動的に研修終了、
+という制度ではありません。
+</p>
+
+<p>
+レジ・品出し・洗い物を、
+現在働いているスタッフと遜色のない
+<strong>速度・正確さ・丁寧さ</strong>で
+担当できることを基準に判断します。
+</p>
+
+<p>
+仕事を早く覚えて基準を満たした場合には、
+
+<strong>
+150時間より早く研修期間を終了し、
+通常時給へ変更する場合もあります。
+</strong>
+
+</p>
+
+</div>
+</section>
+
+
+<!-- FAQ -->
+<section>
+<div class="wrap faq">
+
+<div class="kicker">FAQ</div>
+
+<h2 class="section-title">
+よくある質問。
+</h2>
+
+
+<details open>
+
+<summary>
+未経験でも応募できますか？
+</summary>
+
+<p>
+もちろん大丈夫です。
+17Bakeryで働いているスタッフのほとんどが
+未経験からスタートしています。
+慣れるまでは先輩スタッフがついて
+マンツーマンで教えます。
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+毎週、土日の両方に出勤する必要がありますか？
+</summary>
+
+<p>
+必ず毎週両方に出勤する必要はありません。
+
+ただし今回の募集は、
+土日に勤務できる方が対象です。
+
+勤務希望を多く出していただけるほど
+シフトを調整しやすくなります。
+
+勤務可能日が少ない場合は、
+シフトに入れないことがあります。
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+短時間でも働けますか？
+</summary>
+
+<p>
+はい。
+
+1日1時間〜最大6時間まで
+勤務希望を出していただけます。
+
+3時間程度の勤務も可能です。
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+研修期間はありますか？
+</summary>
+
+<p>
+
+はい。
+
+売り場スタッフは150時間を
+研修期間の目安としています。
+
+ただし、
+仕事の習熟状況によっては
+150時間より早く研修を終了する場合があります。
+
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+服装・身だしなみにルールはありますか？
+</summary>
+
+<p>
+
+食品を扱う仕事のため、
+衛生面・異物混入防止・パンの香りを
+大切にしています。
+
+</p>
+
+<p>
+<strong>エプロン</strong><br>
+お店からデニムエプロンを支給します。
+</p>
+
+<p>
+<strong>帽子</strong><br>
+各自でご用意ください。
+長い髪はまとめて、
+商品や作業に触れないようにしてください。
+</p>
+
+<p>
+<strong>髪色</strong><br>
+基本的に自由です。
+清潔感のある身だしなみをお願いします。
+</p>
+
+<p>
+<strong>ネイル</strong><br>
+製造スタッフは禁止です。
+売り場スタッフについては、
+ナチュラルなものであれば
+事前相談のうえ可能です。
+</p>
+
+<p>
+<strong>ピアス・アクセサリー</strong><br>
+異物混入防止のため、
+勤務中は外していただきます。
+</p>
+
+<p>
+<strong>香水</strong><br>
+香水など香りの強いものはご遠慮ください。
+17Bakeryでは焼きたてのパンの香りも
+お店の大切な要素だと考えています。
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+従業員割引はありますか？
+</summary>
+
+<p>
+
+17Bakeryの商品を
+<strong>20％OFF</strong>で購入できます。
+
+<br><br>
+
+1回の購入につき割引対象は2,000円分まで、
+<strong>最大400円の割引</strong>となります。
+
+</p>
+
+</details>
+
+</div>
+</section>
+
+
+<!-- DETAILS -->
+<section class="cream">
+<div class="wrap">
+
+<div class="kicker">DETAILS</div>
+
+<h2 class="section-title">
+募集要項
+</h2>
+
+<div class="table">
+
+<div class="row">
+<b>製造</b>
+<span>正社員のみ募集</span>
+</div>
+
+<div class="row">
+<b>売り場</b>
+<span>パートスタッフ／土日に勤務できる方</span>
+</div>
+
+<div class="row">
+<b>売り場時給</b>
+<span>1,500円／研修中1,200円</span>
+</div>
+
+<div class="row">
+<b>勤務時間</b>
+<span>
+1日1〜6時間。
+勤務可能な曜日・時間帯はご相談ください。
+</span>
+</div>
+
+<div class="row">
+<b>研修</b>
+<span>
+150時間目安。
+習熟状況によって早期終了の場合があります。
+</span>
+</div>
+
+<div class="row">
+<b>従業員割引</b>
+<span>
+20％OFF／1回最大400円割引
+</span>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- FINAL PHOTO -->
+<div class="full-photo">
+<img src="uribazentai.jpg.JPG"
+alt="17Bakeryの売り場">
+</div>
+
+
+<!-- ENTRY -->
+<section class="cta">
+<div class="wrap">
+
+<div class="kicker">ENTRY</div>
+
+<h2 class="section-title">
+まずは、17Bakeryを知ってください。
+</h2>
+
+<p>
+仕事内容も。<br>
+楽しさも。<br>
+忙しさも。
+</p>
+
+<p>
+
+そのうえで、
+
+<strong>
+「17Bakeryで働いてみたい。」
+</strong>
+
+と思っていただけたら、
+ぜひご応募ください。
+
+</p>
+
+
+<a
+class="button"
+href="https://docs.google.com/forms/d/e/1FAIpQLSe9UG8-fVwaNTjHuvh-8IyZ7uzWqlKZ27zBMAuEzqQOdLzOHg/viewform?usp=dialog"
+target="_blank"
+rel="noopener noreferrer">
+応募フォームへ
+</a>
+
+</div>
+</section>
+
+
+<footer>
+
+<span>
+17Bakery
+</span>
+
+<span>
+RECRUIT / INAZAWA, AICHI
+</span>
+
+</footer>
+
+</body>
+</html>
