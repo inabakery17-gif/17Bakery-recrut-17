@@ -3,12 +3,16 @@
 
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 
 <title>RECRUIT | 17Bakery</title>
 <meta name="description" content="愛知県稲沢市 17Bakery 採用サイト">
 
 <style>
+
+/* ==================================================
+   BASE
+================================================== */
 
 :root{
   --ink:#201d19;
@@ -31,12 +35,14 @@ body{
   margin:0;
   color:var(--ink);
   background:var(--paper);
+
   font-family:
     -apple-system,
     BlinkMacSystemFont,
     "Hiragino Kaku Gothic ProN",
     "Yu Gothic",
     sans-serif;
+
   line-height:1.9;
   overflow-x:hidden;
 }
@@ -63,10 +69,15 @@ section{
 }
 
 .title{
-  font-family:Georgia,"Yu Mincho",serif;
+  font-family:
+    Georgia,
+    "Yu Mincho",
+    serif;
+
   font-weight:500;
   font-size:clamp(35px,5vw,62px);
   line-height:1.25;
+
   margin:8px 0 30px;
 }
 
@@ -75,18 +86,22 @@ section{
   font-size:17px;
 }
 
+.cream{
+  background:var(--cream);
+}
 
-/* ==========================================
+
+/* ==================================================
    ANIMATION
-========================================== */
+================================================== */
 
 .reveal{
   opacity:0;
-  transform:translateY(45px);
+  transform:translateY(42px);
 
   transition:
-    opacity .9s ease,
-    transform .9s cubic-bezier(.2,.7,.2,1);
+    opacity .85s ease,
+    transform .85s cubic-bezier(.2,.7,.2,1);
 }
 
 .reveal.show{
@@ -99,7 +114,8 @@ section{
 }
 
 .zoom img{
-  transition:transform 1.1s cubic-bezier(.2,.7,.2,1);
+  transition:
+    transform 1.1s cubic-bezier(.2,.7,.2,1);
 }
 
 .zoom:hover img{
@@ -107,29 +123,29 @@ section{
 }
 
 
-/* ==========================================
+/* ==================================================
    HERO
-========================================== */
+================================================== */
 
 .hero{
   height:100svh;
   min-height:650px;
+
   position:relative;
   overflow:hidden;
+
   background:#1d1b18;
   color:white;
 }
 
-/*
-  背景画像ではなく、
-  通常のIMGタグとして直接読み込む
-*/
-
 .hero-image{
   position:absolute;
+
   inset:-3%;
+
   width:106%;
   height:106%;
+
   object-fit:cover;
 
   animation:
@@ -137,6 +153,7 @@ section{
 }
 
 @keyframes heroZoom{
+
   from{
     transform:scale(1.08);
   }
@@ -144,6 +161,7 @@ section{
   to{
     transform:scale(1);
   }
+
 }
 
 .hero-overlay{
@@ -155,14 +173,15 @@ section{
     linear-gradient(
       180deg,
       rgba(0,0,0,.08) 0%,
-      rgba(0,0,0,.13) 42%,
-      rgba(0,0,0,.68) 100%
+      rgba(0,0,0,.12) 40%,
+      rgba(0,0,0,.72) 100%
     );
 }
 
 .logo{
   position:absolute;
   z-index:3;
+
   top:34px;
   left:6vw;
 
@@ -182,23 +201,31 @@ section{
 }
 
 .hero-small{
-  letter-spacing:.3em;
+  letter-spacing:.30em;
   font-size:11px;
   margin-bottom:18px;
 }
 
 .hero h1{
-  font-family:Georgia,"Yu Mincho",serif;
+  font-family:
+    Georgia,
+    "Yu Mincho",
+    serif;
+
   font-weight:400;
 
-  font-size:clamp(48px,8vw,100px);
+  font-size:
+    clamp(48px,8vw,100px);
+
   line-height:1.05;
 
   margin:0;
 }
 
 .hero p{
-  font-size:clamp(15px,2vw,20px);
+  font-size:
+    clamp(15px,2vw,20px);
+
   margin-top:25px;
 }
 
@@ -211,11 +238,13 @@ section{
 
   font-size:10px;
   letter-spacing:.25em;
+
   writing-mode:vertical-rl;
 }
 
 .scroll:after{
   content:"";
+
   display:block;
 
   width:1px;
@@ -224,13 +253,14 @@ section{
   background:white;
 
   margin:15px auto 0;
+
   opacity:.7;
 }
 
 
-/* ==========================================
-   MOVING TEXT
-========================================== */
+/* ==================================================
+   MARQUEE
+================================================== */
 
 .marquee{
   overflow:hidden;
@@ -246,13 +276,16 @@ section{
   display:inline-block;
 
   font-family:Georgia,serif;
+
   font-size:17px;
   letter-spacing:.25em;
 
-  animation:marquee 25s linear infinite;
+  animation:
+    marquee 25s linear infinite;
 }
 
 @keyframes marquee{
+
   from{
     transform:translateX(0);
   }
@@ -260,12 +293,13 @@ section{
   to{
     transform:translateX(-50%);
   }
+
 }
 
 
-/* ==========================================
+/* ==================================================
    MESSAGE
-========================================== */
+================================================== */
 
 .message-photo{
   margin-top:55px;
@@ -296,15 +330,15 @@ section{
   background:
     linear-gradient(
       180deg,
-      transparent 60%,
-      rgba(0,0,0,.25)
+      transparent 65%,
+      rgba(0,0,0,.22)
     );
 }
 
 
-/* ==========================================
+/* ==================================================
    PHOTO BREAK
-========================================== */
+================================================== */
 
 .photo-break{
   height:72vh;
@@ -317,7 +351,8 @@ section{
       rgba(0,0,0,.15),
       rgba(0,0,0,.55)
     ),
-    url("./pan-uriba.jpg") center/cover no-repeat;
+    url("./pan-uriba.jpg")
+    center/cover no-repeat;
 
   color:white;
 
@@ -326,27 +361,31 @@ section{
 }
 
 .photo-break h2{
-  font-family:Georgia,"Yu Mincho",serif;
+  font-family:
+    Georgia,
+    "Yu Mincho",
+    serif;
+
   font-weight:400;
 
-  font-size:clamp(38px,6vw,76px);
+  font-size:
+    clamp(38px,6vw,76px);
+
   line-height:1.25;
 
   max-width:800px;
 }
 
 
-/* ==========================================
+/* ==================================================
    RECRUIT
-========================================== */
-
-.cream{
-  background:var(--cream);
-}
+================================================== */
 
 .jobs{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
 
   gap:20px;
 }
@@ -356,7 +395,8 @@ section{
 
   padding:40px;
 
-  border-top:3px solid var(--ink);
+  border-top:
+    3px solid var(--ink);
 }
 
 .job-label{
@@ -366,7 +406,10 @@ section{
 }
 
 .job h3{
-  font-family:Georgia,"Yu Mincho",serif;
+  font-family:
+    Georgia,
+    "Yu Mincho",
+    serif;
 
   font-size:30px;
   font-weight:500;
@@ -380,9 +423,9 @@ section{
 }
 
 
-/* ==========================================
+/* ==================================================
    SALES WORK
-========================================== */
+================================================== */
 
 .work-grid{
   display:grid;
@@ -408,6 +451,7 @@ section{
 .work-photo img{
   width:100%;
   height:100%;
+
   object-fit:cover;
 }
 
@@ -431,9 +475,9 @@ section{
 }
 
 
-/* ==========================================
-   PROCESS
-========================================== */
+/* ==================================================
+   BAKERY PROCESS
+================================================== */
 
 .process{
   display:grid;
@@ -459,6 +503,7 @@ section{
 .process-photo img{
   width:100%;
   height:100%;
+
   object-fit:cover;
 }
 
@@ -481,9 +526,85 @@ section{
 }
 
 
-/* ==========================================
+/* ==================================================
+   MOVIE
+================================================== */
+
+.movie{
+  position:relative;
+  overflow:hidden;
+
+  background:#171512;
+  color:white;
+}
+
+.movie:before{
+  content:"17BAKERY";
+
+  position:absolute;
+
+  right:-20px;
+  top:20px;
+
+  font-family:Georgia,serif;
+
+  font-size:
+    clamp(80px,16vw,220px);
+
+  line-height:1;
+
+  color:
+    rgba(255,255,255,.025);
+
+  pointer-events:none;
+}
+
+.movie .kicker{
+  color:#d7c2aa;
+}
+
+.movie .title{
+  color:white;
+}
+
+.movie-intro{
+  color:#d7d2cc;
+
+  max-width:720px;
+
+  margin-bottom:50px;
+}
+
+.movie-frame{
+  position:relative;
+
+  width:100%;
+  aspect-ratio:16/9;
+
+  overflow:hidden;
+
+  background:#000;
+
+  box-shadow:
+    0 30px 80px
+    rgba(0,0,0,.35);
+}
+
+.movie-frame iframe{
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  border:0;
+}
+
+
+/* ==================================================
    STAFF VOICE
-========================================== */
+================================================== */
 
 .voice{
   position:relative;
@@ -494,11 +615,6 @@ section{
   overflow:hidden;
 }
 
-/*
-  STAFF VOICEもCSS背景ではなく
-  IMGタグを直接配置
-*/
-
 .voice-bg{
   position:absolute;
   inset:0;
@@ -508,7 +624,7 @@ section{
 
   object-fit:cover;
 
-  opacity:.18;
+  opacity:.20;
 }
 
 .voice-overlay{
@@ -518,7 +634,7 @@ section{
   background:
     linear-gradient(
       135deg,
-      rgba(22,19,16,.88),
+      rgba(22,19,16,.87),
       rgba(22,19,16,.95)
     );
 }
@@ -536,7 +652,6 @@ section{
 
 .voice h3{
   margin:45px 0 10px;
-
   font-size:21px;
 }
 
@@ -545,9 +660,9 @@ section{
 }
 
 
-/* ==========================================
+/* ==================================================
    NUMBERS
-========================================== */
+================================================== */
 
 .numbers{
   display:grid;
@@ -559,7 +674,8 @@ section{
 
   background:var(--line);
 
-  border:1px solid var(--line);
+  border:
+    1px solid var(--line);
 }
 
 .number{
@@ -580,16 +696,17 @@ section{
 }
 
 
-/* ==========================================
+/* ==================================================
    INFO
-========================================== */
+================================================== */
 
 .notice{
   background:white;
 
   padding:28px;
 
-  border-left:3px solid var(--brown);
+  border-left:
+    3px solid var(--brown);
 
   margin:30px 0;
 }
@@ -608,7 +725,8 @@ section{
 }
 
 .table{
-  border-top:1px solid var(--line);
+  border-top:
+    1px solid var(--line);
 }
 
 .row{
@@ -621,13 +739,14 @@ section{
 
   padding:19px 0;
 
-  border-bottom:1px solid var(--line);
+  border-bottom:
+    1px solid var(--line);
 }
 
 
-/* ==========================================
+/* ==================================================
    FINAL CTA
-========================================== */
+================================================== */
 
 .final{
   min-height:90vh;
@@ -660,9 +779,14 @@ section{
 }
 
 .final h2{
-  font-family:Georgia,"Yu Mincho",serif;
+  font-family:
+    Georgia,
+    "Yu Mincho",
+    serif;
 
-  font-size:clamp(40px,6vw,75px);
+  font-size:
+    clamp(40px,6vw,75px);
+
   line-height:1.25;
 
   font-weight:400;
@@ -690,15 +814,25 @@ section{
 }
 
 .button:hover{
-  transform:translateY(-3px);
+  transform:
+    translateY(-3px);
 
   background:var(--cream);
 }
 
 
-/* ==========================================
+/* ==================================================
+   MOBILE FIXED ENTRY
+================================================== */
+
+.mobile-entry{
+  display:none;
+}
+
+
+/* ==================================================
    FOOTER
-========================================== */
+================================================== */
 
 footer{
   padding:35px 6vw;
@@ -707,24 +841,64 @@ footer{
   color:white;
 
   display:flex;
-  justify-content:space-between;
+  justify-content:
+    space-between;
 
   font-size:11px;
   letter-spacing:.12em;
 }
 
 
-/* ==========================================
-   MOBILE
-========================================== */
+/* ==================================================
+   SMARTPHONE
+   ここからスマホ専用設計
+================================================== */
 
 @media(max-width:760px){
 
-  section{
-    padding:75px 0;
+  body{
+    line-height:1.82;
+    padding-bottom:76px;
   }
 
+
+  /* --------------------------
+     共通余白
+  -------------------------- */
+
+  .wrap{
+    width:88vw;
+  }
+
+  section{
+    padding:72px 0;
+  }
+
+  .kicker{
+    font-size:10px;
+    letter-spacing:.24em;
+  }
+
+  .title{
+    font-size:34px;
+    line-height:1.32;
+
+    margin:
+      7px 0 25px;
+  }
+
+  .lead{
+    font-size:15px;
+    line-height:1.95;
+  }
+
+
+  /* --------------------------
+     HERO
+  -------------------------- */
+
   .hero{
+    height:100svh;
     min-height:620px;
   }
 
@@ -733,100 +907,564 @@ footer{
 
     width:100%;
     height:100%;
+
+    object-fit:cover;
+
+    /*
+      スマホで写真の中央より
+      少し下を見せる
+    */
+
+    object-position:
+      50% 55%;
+  }
+
+  .hero-overlay{
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0,0,0,.12) 0%,
+        rgba(0,0,0,.05) 32%,
+        rgba(0,0,0,.28) 58%,
+        rgba(0,0,0,.82) 100%
+      );
+  }
+
+  .logo{
+    top:
+      calc(
+        22px +
+        env(safe-area-inset-top)
+      );
+
+    left:6vw;
+
+    font-size:10px;
+    letter-spacing:.20em;
   }
 
   .hero-copy{
-    bottom:9vh;
+    left:6vw;
+    right:6vw;
+
+    bottom:
+      calc(
+        65px +
+        env(safe-area-inset-bottom)
+      );
+
+    width:auto;
+  }
+
+  .hero-small{
+    font-size:9px;
+
+    letter-spacing:.27em;
+
+    margin-bottom:12px;
   }
 
   .hero h1{
-    font-size:clamp(43px,13vw,65px);
+    font-size:
+      clamp(38px,11.2vw,53px);
+
+    line-height:1.16;
+
+    letter-spacing:-.035em;
   }
 
-  .jobs{
-    grid-template-columns:1fr;
-  }
+  .hero p{
+    margin-top:20px;
 
+    font-size:14px;
+    line-height:1.75;
 
-  /*
-   売り場はスマホでは
-   1枚ずつ大きく見せる
-  */
-
-  .work-grid{
-    grid-template-columns:1fr;
-  }
-
-  .work-photo{
-    height:360px;
-  }
-
-
-  /*
-   製造工程は
-   2枚 → 大判 → 2枚
-  */
-
-  .process{
-    grid-template-columns:
-      repeat(2,minmax(0,1fr));
-
-    gap:10px;
-  }
-
-  .process-photo{
-    height:240px;
-  }
-
-  .process-copy{
-    padding:15px;
-  }
-
-  .process-copy h3{
-    font-size:19px;
-  }
-
-  .process-wide{
-    grid-column:1/-1;
-  }
-
-  .process-wide .process-photo{
-    height:390px;
-  }
-
-
-  .numbers{
-    grid-template-columns:
-      1fr 1fr;
-  }
-
-  .message-photo{
-    height:500px;
-  }
-
-  .photo-break{
-    height:65vh;
-  }
-
-  .row{
-    grid-template-columns:
-      90px 1fr;
+    max-width:330px;
   }
 
   .scroll{
     display:none;
   }
 
+
+  /* --------------------------
+     流れる文字
+  -------------------------- */
+
+  .marquee{
+    padding:14px 0;
+  }
+
+  .marquee-track{
+    font-size:12px;
+    letter-spacing:.19em;
+
+    animation-duration:32s;
+  }
+
+
+  /* --------------------------
+     MESSAGE
+  -------------------------- */
+
+  .message-photo{
+    width:100vw;
+
+    margin-left:-6vw;
+
+    margin-top:40px;
+
+    height:68vh;
+    max-height:650px;
+    min-height:460px;
+  }
+
+  .message-photo img{
+    object-position:center;
+  }
+
+
+  /* --------------------------
+     PHOTO BREAK
+  -------------------------- */
+
+  .photo-break{
+    height:72svh;
+    min-height:520px;
+
+    background-position:center;
+
+    background-attachment:scroll;
+  }
+
+  .photo-break h2{
+    font-size:39px;
+    line-height:1.35;
+
+    margin-top:10px;
+  }
+
+
+  /* --------------------------
+     RECRUIT
+  -------------------------- */
+
+  .jobs{
+    grid-template-columns:1fr;
+    gap:15px;
+  }
+
+  .job{
+    padding:27px 24px;
+  }
+
+  .job h3{
+    font-size:26px;
+
+    margin:
+      5px 0 16px;
+  }
+
+  .job p{
+    font-size:14px;
+  }
+
+  .big-price{
+    font-size:30px;
+  }
+
+
+  /* --------------------------
+     売り場の仕事
+  -------------------------- */
+
+  .work-grid{
+    grid-template-columns:1fr;
+
+    gap:25px;
+
+    margin-top:38px;
+  }
+
+  .work-card{
+    box-shadow:
+      0 8px 30px
+      rgba(40,30,20,.07);
+  }
+
+  .work-photo{
+    height:auto;
+    aspect-ratio:4/3;
+  }
+
+  .work-photo img{
+    object-fit:cover;
+  }
+
+  .work-copy{
+    padding:
+      19px 20px 23px;
+  }
+
+  .work-copy h3{
+    font-size:22px;
+    margin:2px 0 5px;
+  }
+
+  .work-copy p{
+    font-size:14px;
+    line-height:1.75;
+
+    margin-bottom:0;
+  }
+
+
+  /* --------------------------
+     パンができるまで
+  -------------------------- */
+
+  .process{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+
+    gap:10px;
+
+    margin-top:38px;
+  }
+
+  .process-card{
+    box-shadow:
+      0 5px 20px
+      rgba(40,30,20,.05);
+  }
+
+  .process-photo{
+    height:auto;
+
+    aspect-ratio:4/5;
+  }
+
+  .process-photo img{
+    object-fit:cover;
+  }
+
+  .process-copy{
+    padding:
+      13px 13px 16px;
+  }
+
+  .process-copy .no{
+    font-size:9px;
+    letter-spacing:.10em;
+  }
+
+  .process-copy h3{
+    font-size:18px;
+    margin:2px 0 3px;
+  }
+
+  .process-copy p{
+    font-size:12px;
+    line-height:1.65;
+
+    margin:0;
+  }
+
+  /*
+    成形だけ大きく
+  */
+
+  .process-wide{
+    grid-column:1/-1;
+  }
+
+  .process-wide .process-photo{
+    height:auto;
+
+    aspect-ratio:16/10;
+  }
+
+  .process-wide .process-copy{
+    padding:
+      17px 18px 20px;
+  }
+
+  .process-wide .process-copy h3{
+    font-size:21px;
+  }
+
+  .process-wide .process-copy p{
+    font-size:14px;
+  }
+
+
+  /* --------------------------
+     MOVIE
+  -------------------------- */
+
+  .movie{
+    padding:
+      80px 0 75px;
+  }
+
+  .movie:before{
+    top:30px;
+    right:-10px;
+
+    font-size:80px;
+  }
+
+  .movie .title{
+    font-size:35px;
+  }
+
+  .movie-intro{
+    font-size:14px;
+    line-height:1.85;
+
+    margin-bottom:32px;
+  }
+
+  .movie-frame{
+    /*
+      画面幅いっぱいにする
+    */
+
+    width:100vw;
+
+    margin-left:-6vw;
+
+    box-shadow:none;
+  }
+
+
+  /* --------------------------
+     STAFF VOICE
+  -------------------------- */
+
+  .voice-bg{
+    object-position:center;
+    opacity:.18;
+  }
+
+  .voice h3{
+    margin:
+      36px 0 10px;
+
+    font-size:17px;
+    line-height:1.7;
+  }
+
+  .voice p{
+    font-size:14px;
+    line-height:1.9;
+  }
+
+
+  /* --------------------------
+     NUMBERS
+  -------------------------- */
+
+  .numbers{
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .number{
+    padding:
+      30px 8px;
+
+    font-size:12px;
+  }
+
+  .number strong{
+    font-size:27px;
+    line-height:1.3;
+
+    margin-bottom:5px;
+  }
+
+
+  /* --------------------------
+     SHIFT / TRAINING
+  -------------------------- */
+
+  .notice{
+    padding:
+      22px 20px;
+
+    margin:
+      25px 0;
+
+    font-size:14px;
+  }
+
+
+  /* --------------------------
+     FAQ
+  -------------------------- */
+
+  .faq details{
+    margin:8px 0;
+
+    padding:
+      17px 18px;
+  }
+
+  .faq summary{
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  .faq details p{
+    font-size:13px;
+    line-height:1.8;
+  }
+
+
+  /* --------------------------
+     募集要項
+  -------------------------- */
+
+  .row{
+    grid-template-columns:
+      82px 1fr;
+
+    gap:12px;
+
+    padding:
+      17px 0;
+
+    font-size:13px;
+  }
+
+
+  /* --------------------------
+     FINAL
+  -------------------------- */
+
+  .final{
+    min-height:78svh;
+
+    background-position:center;
+  }
+
+  .final h2{
+    font-size:38px;
+    line-height:1.35;
+  }
+
+  .final p{
+    font-size:14px;
+  }
+
+  .final .button{
+    padding:
+      15px 35px;
+  }
+
+
+  /* --------------------------
+     FOOTER
+  -------------------------- */
+
   footer{
     display:block;
+
+    padding:
+      28px 6vw
+      calc(
+        105px +
+        env(safe-area-inset-bottom)
+      );
+
+    font-size:9px;
+  }
+
+  footer span{
+    display:block;
+    margin:4px 0;
+  }
+
+
+  /* --------------------------
+     スマホ固定応募ボタン
+  -------------------------- */
+
+  .mobile-entry{
+    position:fixed;
+
+    display:block;
+
+    z-index:1000;
+
+    left:14px;
+    right:14px;
+
+    bottom:
+      calc(
+        10px +
+        env(safe-area-inset-bottom)
+      );
+
+    padding:14px 18px;
+
+    background:
+      rgba(28,25,22,.94);
+
+    color:white;
+
+    text-align:center;
+    text-decoration:none;
+
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.08em;
+
+    border-radius:999px;
+
+    box-shadow:
+      0 8px 30px
+      rgba(0,0,0,.25);
+
+    backdrop-filter:
+      blur(12px);
+
+    -webkit-backdrop-filter:
+      blur(12px);
   }
 
 }
 
 
-/* ==========================================
-   ACCESSIBILITY
-========================================== */
+/* ==================================================
+   SMALL SMARTPHONE
+================================================== */
+
+@media(max-width:390px){
+
+  .hero h1{
+    font-size:39px;
+  }
+
+  .title{
+    font-size:31px;
+  }
+
+  .photo-break h2{
+    font-size:35px;
+  }
+
+  .final h2{
+    font-size:34px;
+  }
+
+}
+
+
+/* ==================================================
+   REDUCED MOTION
+================================================== */
 
 @media(prefers-reduced-motion:reduce){
 
@@ -851,16 +1489,11 @@ footer{
 <body>
 
 
-<!-- ========================================
+<!-- ==================================================
      HERO
-======================================== -->
+================================================== -->
 
 <header class="hero">
-
-<!--
-GitHubで確認済み
-uribazenntai.jpg.JPG
--->
 
 <img
   class="hero-image"
@@ -903,9 +1536,9 @@ SCROLL
 
 
 
-<!-- ========================================
-     MOVING TEXT
-======================================== -->
+<!-- ==================================================
+     MARQUEE
+================================================== -->
 
 <div class="marquee">
 
@@ -915,6 +1548,8 @@ SCROLL
 17BAKERY　RECRUIT　・　WORK WITH US　・　
 17BAKERY　RECRUIT　・　WORK WITH US　・　
 17BAKERY　RECRUIT　・　WORK WITH US　・　
+17BAKERY　RECRUIT　・　WORK WITH US　・　
+17BAKERY　RECRUIT　・　WORK WITH US　・　
 
 </div>
 
@@ -922,9 +1557,9 @@ SCROLL
 
 
 
-<!-- ========================================
+<!-- ==================================================
      MESSAGE
-======================================== -->
+================================================== -->
 
 <section>
 
@@ -937,7 +1572,8 @@ MESSAGE
 
 
 <h2 class="title">
-一緒に、17Bakeryをつくる。
+一緒に、<br class="mobile-only">
+17Bakeryをつくる。
 </h2>
 
 
@@ -989,11 +1625,6 @@ MESSAGE
 
 <div class="message-photo zoom">
 
-<!--
-GitHubで確認済み
-sutahhu-uribazenntai.jpg.jpg
--->
-
 <img
   src="./sutahhu-uribazenntai.jpg.jpg"
   alt="17Bakeryで働くスタッフ"
@@ -1008,9 +1639,9 @@ sutahhu-uribazenntai.jpg.jpg
 
 
 
-<!-- ========================================
+<!-- ==================================================
      PHOTO BREAK
-======================================== -->
+================================================== -->
 
 <div class="photo-break">
 
@@ -1034,9 +1665,9 @@ OUR BAKERY
 
 
 
-<!-- ========================================
+<!-- ==================================================
      RECRUIT
-======================================== -->
+================================================== -->
 
 <section class="cream">
 
@@ -1055,8 +1686,6 @@ RECRUIT
 
 <div class="jobs">
 
-
-<!-- FULL TIME -->
 
 <div class="job">
 
@@ -1087,8 +1716,6 @@ FULL TIME
 </div>
 
 
-
-<!-- PART TIME -->
 
 <div class="job">
 
@@ -1130,9 +1757,9 @@ PART TIME
 
 
 
-<!-- ========================================
+<!-- ==================================================
      SALES WORK
-======================================== -->
+================================================== -->
 
 <section>
 
@@ -1177,7 +1804,7 @@ SALES WORK
 <div class="work-grid">
 
 
-<!-- 01 REGISTER -->
+<!-- レジ -->
 
 <div class="work-card zoom reveal">
 
@@ -1211,7 +1838,7 @@ SALES WORK
 
 
 
-<!-- 02 DISPLAY -->
+<!-- 品出し -->
 
 <div class="work-card zoom reveal">
 
@@ -1245,7 +1872,7 @@ SALES WORK
 
 
 
-<!-- 03 SUPPORT -->
+<!-- 洗い物 -->
 
 <div class="work-card zoom reveal">
 
@@ -1279,7 +1906,7 @@ SALES WORK
 
 
 
-<!-- 04 PACKING -->
+<!-- 袋詰め -->
 
 <div class="work-card zoom reveal">
 
@@ -1320,9 +1947,9 @@ SALES WORK
 
 
 
-<!-- ========================================
+<!-- ==================================================
      BAKERY WORK
-======================================== -->
+================================================== -->
 
 <section class="cream">
 
@@ -1354,7 +1981,7 @@ BAKERY WORK
 <div class="process">
 
 
-<!-- 01 MIXING -->
+<!-- 仕込み -->
 
 <div class="process-card zoom reveal">
 
@@ -1388,7 +2015,7 @@ BAKERY WORK
 
 
 
-<!-- 02 DIVIDING -->
+<!-- 分割 -->
 
 <div class="process-card zoom reveal">
 
@@ -1422,7 +2049,7 @@ BAKERY WORK
 
 
 
-<!-- 03 SHAPING -->
+<!-- 成形 -->
 
 <div class="process-card process-wide zoom reveal">
 
@@ -1456,7 +2083,7 @@ BAKERY WORK
 
 
 
-<!-- 04 BAKING -->
+<!-- 焼成 -->
 
 <div class="process-card zoom reveal">
 
@@ -1490,7 +2117,7 @@ BAKERY WORK
 
 
 
-<!-- 05 FINISH -->
+<!-- 仕上げ -->
 
 <div class="process-card zoom reveal">
 
@@ -1531,21 +2158,73 @@ BAKERY WORK
 
 
 
-<!-- ========================================
+<!-- ==================================================
+     MOVIE
+================================================== -->
+
+<section class="movie">
+
+<div class="wrap reveal">
+
+
+<div class="kicker">
+MOVIE / 17BAKERY
+</div>
+
+
+<h2 class="title">
+動画で見る<br>
+17Bakery。
+</h2>
+
+
+<p class="movie-intro">
+
+写真だけでは伝わらない、
+17Bakeryの空気感。
+
+<br><br>
+
+パンが並ぶ売り場や、
+実際のお店の雰囲気を
+動画でご覧いただけます。
+
+</p>
+
+
+<div class="movie-frame">
+
+<iframe
+  src="https://www.youtube.com/embed/TQFPIMV6IfU"
+  title="動画で見る17Bakery"
+  loading="lazy"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
      STAFF VOICE
-======================================== -->
+================================================== -->
 
 <section class="voice">
 
-<!--
-ここも直接IMGで読み込む
--->
 
 <img
   class="voice-bg"
   src="./sutahhu-uribazenntai.jpg.jpg"
   alt=""
 >
+
 
 <div class="voice-overlay"></div>
 
@@ -1559,7 +2238,8 @@ STAFF VOICE
 
 
 <h2 class="title">
-実際に働くスタッフの声。
+実際に働く<br>
+スタッフの声。
 </h2>
 
 
@@ -1576,9 +2256,7 @@ Q. どうして17Bakeryで働こうと思ったんですか？
 <br><br>
 
 スタッフのみんなが明るく生き生きと働いている姿も印象的で、
-
 「私もこのチームの一員として働きたい」
-
 と思ったのがきっかけです。
 
 </p>
@@ -1600,9 +2278,7 @@ Q. 実際に働いてみてどうですか？
 <br><br>
 
 ただ、
-
 「もうこんな時間？」
-
 というくらい一日があっという間です。
 
 <br><br>
@@ -1621,7 +2297,6 @@ Q. 大変なところは？
 <p>
 
 土日は特にお客様が多いため、
-
 スピードだけではなく、
 丁寧な接客と正確なレジ操作の
 両方が必要です。
@@ -1629,10 +2304,7 @@ Q. 大変なところは？
 <br><br>
 
 たくさんのお客様にパンを選んでいただき、
-
-「ありがとう」
-
-と言っていただけることが、
+「ありがとう」と言っていただけることが、
 この仕事のやりがいです。
 
 </p>
@@ -1644,9 +2316,9 @@ Q. 大変なところは？
 
 
 
-<!-- ========================================
+<!-- ==================================================
      NUMBERS
-======================================== -->
+================================================== -->
 
 <section class="cream">
 
@@ -1659,7 +2331,8 @@ NUMBERS
 
 
 <h2 class="title">
-数字で見る17Bakery
+数字で見る<br>
+17Bakery
 </h2>
 
 
@@ -1718,9 +2391,9 @@ NUMBERS
 
 
 
-<!-- ========================================
+<!-- ==================================================
      SHIFT
-======================================== -->
+================================================== -->
 
 <section>
 
@@ -1733,7 +2406,8 @@ SHIFT
 
 
 <h2 class="title">
-売り場スタッフの働き方。
+売り場スタッフの<br>
+働き方。
 </h2>
 
 
@@ -1759,11 +2433,8 @@ SHIFT
 <br><br>
 
 現在働いているスタッフの勤務状況と、
-
 店舗が必要としている曜日・時間帯、
-
 皆さんの勤務可能日時を合わせて
-
 シフトを決定します。
 
 </p>
@@ -1787,17 +2458,17 @@ SHIFT
 <br><br>
 
 勤務可能な曜日や時間帯の幅が広いほど、
-
 シフトを調整しやすくなります。
 
 </div>
 
 
 <p>
-勤務可能日時がかなり限定される場合は、
 
+勤務可能日時がかなり限定される場合は、
 希望を出していただいても
 勤務できないことがあります。
+
 </p>
 
 
@@ -1816,9 +2487,9 @@ SHIFT
 
 
 
-<!-- ========================================
+<!-- ==================================================
      TRAINING
-======================================== -->
+================================================== -->
 
 <section class="cream">
 
@@ -1831,14 +2502,14 @@ TRAINING
 
 
 <h2 class="title">
-未経験からでも大丈夫。
+未経験からでも<br>
+大丈夫。
 </h2>
 
 
 <p class="lead">
 
 17Bakeryで働いているスタッフのほとんどが、
-
 未経験からスタートしています。
 
 <br><br>
@@ -1856,13 +2527,13 @@ TRAINING
 <div class="notice">
 
 <strong>
-約100種類。でも、値段の丸暗記は必要ありません。
+約100種類。<br>
+でも、値段の丸暗記は必要ありません。
 </strong>
 
 <br><br>
 
 商品名を覚える必要はありますが、
-
 一つひとつの値段を
 暗記する必要はありません。
 
@@ -1914,9 +2585,7 @@ TRAINING
 <p>
 
 ただし、
-
-150時間働けば自動的に研修終了という
-制度ではありません。
+150時間働けば自動的に研修終了という制度ではありません。
 
 </p>
 
@@ -1924,7 +2593,6 @@ TRAINING
 <p>
 
 レジ・品出し・洗い物を、
-
 現在働いているスタッフと遜色のない
 
 <strong>
@@ -1941,8 +2609,7 @@ TRAINING
 基準を早く満たした場合には、
 
 <strong>
-150時間より早く研修期間を
-終了する場合もあります。
+150時間より早く研修期間を終了する場合もあります。
 </strong>
 
 </p>
@@ -1954,9 +2621,9 @@ TRAINING
 
 
 
-<!-- ========================================
+<!-- ==================================================
      FAQ
-======================================== -->
+================================================== -->
 
 <section>
 
@@ -1982,9 +2649,7 @@ FAQ
 
 <p>
 もちろん大丈夫です。
-
-ほとんどのスタッフが
-未経験からスタートしています。
+ほとんどのスタッフが未経験からスタートしています。
 </p>
 
 </details>
@@ -2053,52 +2718,42 @@ FAQ
 
 
 <p>
-<strong>エプロン：</strong>
-
+<strong>エプロン：</strong><br>
 デニムエプロンを支給します。
 </p>
 
 
 <p>
-<strong>帽子：</strong>
-
+<strong>帽子：</strong><br>
 各自でご用意ください。
-
 長い髪はまとめてください。
 </p>
 
 
 <p>
-<strong>髪色：</strong>
-
+<strong>髪色：</strong><br>
 基本的に自由です。
-
 清潔感のある身だしなみをお願いします。
 </p>
 
 
 <p>
-<strong>ネイル：</strong>
-
+<strong>ネイル：</strong><br>
 製造スタッフは禁止です。
-
-売り場スタッフは
-ナチュラルなものであれば
+売り場スタッフはナチュラルなものであれば
 事前相談のうえ可能です。
 </p>
 
 
 <p>
-<strong>ピアス・アクセサリー：</strong>
-
+<strong>ピアス・アクセサリー：</strong><br>
 異物混入防止のため
 勤務中は外していただきます。
 </p>
 
 
 <p>
-<strong>香水：</strong>
-
+<strong>香水：</strong><br>
 香りの強いものはご遠慮ください。
 </p>
 
@@ -2123,7 +2778,7 @@ FAQ
 
 で購入できます。
 
-<br>
+<br><br>
 
 1回の購入につき
 最大400円の割引です。
@@ -2139,9 +2794,9 @@ FAQ
 
 
 
-<!-- ========================================
+<!-- ==================================================
      DETAILS
-======================================== -->
+================================================== -->
 
 <section class="cream">
 
@@ -2210,7 +2865,7 @@ DETAILS
 </b>
 
 <span>
-1日1〜6時間。
+1日1〜6時間。<br>
 勤務可能な曜日・時間帯はご相談ください。
 </span>
 
@@ -2225,7 +2880,7 @@ DETAILS
 </b>
 
 <span>
-150時間目安。
+150時間目安。<br>
 習熟状況によって早期終了の場合があります。
 </span>
 
@@ -2254,9 +2909,9 @@ DETAILS
 
 
 
-<!-- ========================================
+<!-- ==================================================
      FINAL CTA
-======================================== -->
+================================================== -->
 
 <section class="final">
 
@@ -2271,28 +2926,27 @@ ENTRY
 <h2>
 
 まずは、<br>
-
-17Bakeryを知ってください。
+17Bakeryを<br>
+知ってください。
 
 </h2>
 
 
 <p>
 
-仕事内容も。楽しさも。忙しさも。
+仕事内容も。<br>
+楽しさも。<br>
+忙しさも。
 
 <br><br>
 
 そのうえで、
 
 <strong>
-
 「17Bakeryで働いてみたい。」
-
 </strong>
 
 と思っていただけたら、
-
 ぜひご応募ください。
 
 </p>
@@ -2317,9 +2971,9 @@ ENTRY
 
 
 
-<!-- ========================================
+<!-- ==================================================
      FOOTER
-======================================== -->
+================================================== -->
 
 <footer>
 
@@ -2335,11 +2989,28 @@ RECRUIT / INAZAWA, AICHI
 
 
 
+<!-- ==================================================
+     MOBILE FIXED ENTRY
+================================================== -->
+
+<a
+  class="mobile-entry"
+  href="https://docs.google.com/forms/d/e/1FAIpQLSe9UG8-fVwaNTjHuvh-8IyZ7uzWqlKZ27zBMAuEzqQOdLzOHg/viewform?usp=dialog"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+
+17Bakeryに応募する →
+
+</a>
+
+
+
 <script>
 
-/* ==========================================
+/* ==================================================
    SCROLL REVEAL
-========================================== */
+================================================== */
 
 const observer =
 new IntersectionObserver(
@@ -2361,7 +3032,7 @@ new IntersectionObserver(
 },
 
 {
-  threshold:.12
+  threshold:.10
 }
 
 );
@@ -2377,9 +3048,9 @@ document
 
 
 
-/* ==========================================
+/* ==================================================
    HERO PARALLAX
-========================================== */
+================================================== */
 
 const heroImage =
 document.querySelector(".hero-image");
@@ -2389,23 +3060,38 @@ window.addEventListener(
   "scroll",
   ()=>{
 
+    /*
+      スマホではパララックスを弱くする
+    */
+
+    const mobile =
+      window.innerWidth <= 760;
+
+    const speed =
+      mobile ? .035 : .10;
+
+
     if(
       heroImage &&
-      window.scrollY < window.innerHeight
+      window.scrollY <
+      window.innerHeight
     ){
 
       heroImage.style.translate =
-        `0 ${window.scrollY * .10}px`;
+        `0 ${window.scrollY * speed}px`;
 
     }
 
   },
-  {passive:true}
+
+  {
+    passive:true
+  }
+
 );
 
 </script>
 
 
 </body>
-
 </html>
