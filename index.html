@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -8,6 +9,7 @@
 <meta name="description" content="愛知県稲沢市 17Bakery 採用サイト">
 
 <style>
+
 :root{
   --ink:#201d19;
   --cream:#f4efe6;
@@ -17,16 +19,24 @@
   --line:#d8cec1;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
   color:var(--ink);
   background:var(--paper);
-  font-family:-apple-system,BlinkMacSystemFont,
-  "Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    sans-serif;
   line-height:1.9;
   overflow-x:hidden;
 }
@@ -66,13 +76,14 @@ section{
 }
 
 
-/* =====================
+/* ==========================================
    ANIMATION
-===================== */
+========================================== */
 
 .reveal{
   opacity:0;
   transform:translateY(45px);
+
   transition:
     opacity .9s ease,
     transform .9s cubic-bezier(.2,.7,.2,1);
@@ -81,6 +92,10 @@ section{
 .reveal.show{
   opacity:1;
   transform:none;
+}
+
+.zoom{
+  overflow:hidden;
 }
 
 .zoom img{
@@ -92,43 +107,65 @@ section{
 }
 
 
-/* =====================
+/* ==========================================
    HERO
-===================== */
+========================================== */
 
 .hero{
   height:100svh;
   min-height:650px;
   position:relative;
   overflow:hidden;
+  background:#1d1b18;
   color:white;
 }
 
-.hero-bg{
-  position:absolute;
-  inset:-4%;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,.12),
-      rgba(0,0,0,.16) 45%,
-      rgba(0,0,0,.68)
-    ),
-    url("./uribazentai.jpg") center/cover no-repeat;
+/*
+  背景画像ではなく、
+  通常のIMGタグとして直接読み込む
+*/
 
-  transform:scale(1.07);
-  animation:heroZoom 9s ease-out forwards;
+.hero-image{
+  position:absolute;
+  inset:-3%;
+  width:106%;
+  height:106%;
+  object-fit:cover;
+
+  animation:
+    heroZoom 9s cubic-bezier(.2,.7,.2,1) forwards;
 }
 
 @keyframes heroZoom{
-  to{transform:scale(1)}
+  from{
+    transform:scale(1.08);
+  }
+
+  to{
+    transform:scale(1);
+  }
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  z-index:1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.08) 0%,
+      rgba(0,0,0,.13) 42%,
+      rgba(0,0,0,.68) 100%
+    );
 }
 
 .logo{
   position:absolute;
-  z-index:2;
+  z-index:3;
   top:34px;
   left:6vw;
+
   font-size:13px;
   font-weight:700;
   letter-spacing:.22em;
@@ -136,9 +173,11 @@ section{
 
 .hero-copy{
   position:absolute;
-  z-index:2;
+  z-index:3;
+
   left:6vw;
   bottom:10vh;
+
   width:min(950px,88vw);
 }
 
@@ -151,8 +190,10 @@ section{
 .hero h1{
   font-family:Georgia,"Yu Mincho",serif;
   font-weight:400;
+
   font-size:clamp(48px,8vw,100px);
   line-height:1.05;
+
   margin:0;
 }
 
@@ -163,9 +204,11 @@ section{
 
 .scroll{
   position:absolute;
+  z-index:3;
+
   right:5vw;
   bottom:7vh;
-  z-index:2;
+
   font-size:10px;
   letter-spacing:.25em;
   writing-mode:vertical-rl;
@@ -174,81 +217,110 @@ section{
 .scroll:after{
   content:"";
   display:block;
+
   width:1px;
   height:65px;
+
   background:white;
+
   margin:15px auto 0;
   opacity:.7;
 }
 
 
-/* =====================
-   MARQUEE
-===================== */
+/* ==========================================
+   MOVING TEXT
+========================================== */
 
 .marquee{
   overflow:hidden;
   white-space:nowrap;
+
   background:var(--dark);
   color:white;
+
   padding:19px 0;
 }
 
 .marquee-track{
   display:inline-block;
+
   font-family:Georgia,serif;
   font-size:17px;
   letter-spacing:.25em;
+
   animation:marquee 25s linear infinite;
 }
 
 @keyframes marquee{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-50%);
+  }
 }
 
 
-/* =====================
-   MESSAGE PHOTO
-===================== */
+/* ==========================================
+   MESSAGE
+========================================== */
 
 .message-photo{
   margin-top:55px;
+
   height:min(62vw,700px);
+
   overflow:hidden;
   position:relative;
+
+  background:#ddd;
 }
 
 .message-photo img{
   width:100%;
   height:100%;
+
   object-fit:cover;
 }
 
 .message-photo:after{
   content:"";
+
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    180deg,
-    transparent 60%,
-    rgba(0,0,0,.25)
-  );
+
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 60%,
+      rgba(0,0,0,.25)
+    );
 }
 
 
-/* =====================
+/* ==========================================
    PHOTO BREAK
-===================== */
+========================================== */
 
 .photo-break{
   height:72vh;
   min-height:550px;
+
   position:relative;
+
   background:
-    linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.55)),
-    url("./pan-uriba.jpg") center/cover fixed;
+    linear-gradient(
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.55)
+    ),
+    url("./pan-uriba.jpg") center/cover no-repeat;
+
   color:white;
+
   display:flex;
   align-items:center;
 }
@@ -256,27 +328,34 @@ section{
 .photo-break h2{
   font-family:Georgia,"Yu Mincho",serif;
   font-weight:400;
+
   font-size:clamp(38px,6vw,76px);
   line-height:1.25;
+
   max-width:800px;
 }
 
 
-/* =====================
+/* ==========================================
    RECRUIT
-===================== */
+========================================== */
 
-.cream{background:var(--cream)}
+.cream{
+  background:var(--cream);
+}
 
 .jobs{
   display:grid;
   grid-template-columns:1fr 1fr;
+
   gap:20px;
 }
 
 .job{
   background:white;
+
   padding:40px;
+
   border-top:3px solid var(--ink);
 }
 
@@ -288,8 +367,10 @@ section{
 
 .job h3{
   font-family:Georgia,"Yu Mincho",serif;
+
   font-size:30px;
   font-weight:500;
+
   margin:7px 0 20px;
 }
 
@@ -299,14 +380,18 @@ section{
 }
 
 
-/* =====================
-   WORK CARDS
-===================== */
+/* ==========================================
+   SALES WORK
+========================================== */
 
 .work-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
   gap:22px;
+
   margin-top:50px;
 }
 
@@ -321,6 +406,7 @@ section{
 }
 
 .work-photo img{
+  width:100%;
   height:100%;
   object-fit:cover;
 }
@@ -331,25 +417,32 @@ section{
 
 .no{
   font-family:Georgia,serif;
+
   color:var(--brown);
+
   font-size:12px;
   letter-spacing:.18em;
 }
 
 .work-copy h3{
   font-size:25px;
+
   margin:2px 0 8px;
 }
 
 
-/* =====================
+/* ==========================================
    PROCESS
-===================== */
+========================================== */
 
 .process{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
   gap:22px;
+
   margin-top:50px;
 }
 
@@ -364,6 +457,7 @@ section{
 }
 
 .process-photo img{
+  width:100%;
   height:100%;
   object-fit:cover;
 }
@@ -374,6 +468,7 @@ section{
 
 .process-copy h3{
   font-size:24px;
+
   margin:3px 0 5px;
 }
 
@@ -386,32 +481,62 @@ section{
 }
 
 
-/* =====================
-   VOICE
-===================== */
+/* ==========================================
+   STAFF VOICE
+========================================== */
 
 .voice{
   position:relative;
+
   color:white;
+  background:#1c1916;
+
+  overflow:hidden;
+}
+
+/*
+  STAFF VOICEもCSS背景ではなく
+  IMGタグを直接配置
+*/
+
+.voice-bg{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  opacity:.18;
+}
+
+.voice-overlay{
+  position:absolute;
+  inset:0;
+
   background:
     linear-gradient(
-      rgba(22,19,16,.91),
-      rgba(22,19,16,.94)
-    ),
-    url("./sutahhu-uribazentai.jpg")
-    center/cover no-repeat;
+      135deg,
+      rgba(22,19,16,.88),
+      rgba(22,19,16,.95)
+    );
+}
+
+.voice-inner{
+  position:relative;
+  z-index:2;
+
+  max-width:850px;
 }
 
 .voice .kicker{
   color:#d7c2aa;
 }
 
-.voice-inner{
-  max-width:850px;
-}
-
 .voice h3{
   margin:45px 0 10px;
+
   font-size:21px;
 }
 
@@ -420,46 +545,60 @@ section{
 }
 
 
-/* =====================
+/* ==========================================
    NUMBERS
-===================== */
+========================================== */
 
 .numbers{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+    repeat(4,1fr);
+
   gap:1px;
+
   background:var(--line);
+
   border:1px solid var(--line);
 }
 
 .number{
   background:white;
+
   padding:42px 15px;
+
   text-align:center;
 }
 
 .number strong{
   display:block;
+
   font-family:Georgia,serif;
+
   font-size:35px;
   font-weight:400;
 }
 
 
-/* =====================
+/* ==========================================
    INFO
-===================== */
+========================================== */
 
 .notice{
   background:white;
+
   padding:28px;
+
   border-left:3px solid var(--brown);
+
   margin:30px 0;
 }
 
 .faq details{
   background:white;
+
   margin:10px 0;
+
   padding:20px 24px;
 }
 
@@ -474,23 +613,32 @@ section{
 
 .row{
   display:grid;
-  grid-template-columns:150px 1fr;
+
+  grid-template-columns:
+    150px 1fr;
+
   gap:20px;
+
   padding:19px 0;
+
   border-bottom:1px solid var(--line);
 }
 
 
-/* =====================
+/* ==========================================
    FINAL CTA
-===================== */
+========================================== */
 
 .final{
   min-height:90vh;
+
   position:relative;
+
   color:white;
+
   display:flex;
   align-items:center;
+
   text-align:center;
 
   background:
@@ -513,54 +661,116 @@ section{
 
 .final h2{
   font-family:Georgia,"Yu Mincho",serif;
+
   font-size:clamp(40px,6vw,75px);
   line-height:1.25;
+
   font-weight:400;
 }
 
 .button{
   display:inline-block;
+
   margin-top:25px;
+
   padding:18px 45px;
+
   color:var(--ink);
   background:white;
+
   text-decoration:none;
+
   border-radius:999px;
+
   font-weight:700;
-  transition:.3s;
+
+  transition:
+    transform .3s ease,
+    background .3s ease;
 }
 
 .button:hover{
   transform:translateY(-3px);
+
   background:var(--cream);
 }
 
+
+/* ==========================================
+   FOOTER
+========================================== */
+
 footer{
   padding:35px 6vw;
+
   background:#171512;
   color:white;
+
   display:flex;
   justify-content:space-between;
+
   font-size:11px;
   letter-spacing:.12em;
 }
 
 
-/* =====================
+/* ==========================================
    MOBILE
-===================== */
+========================================== */
 
 @media(max-width:760px){
 
-  section{padding:75px 0}
+  section{
+    padding:75px 0;
+  }
 
-  .jobs,
+  .hero{
+    min-height:620px;
+  }
+
+  .hero-image{
+    inset:0;
+
+    width:100%;
+    height:100%;
+  }
+
+  .hero-copy{
+    bottom:9vh;
+  }
+
+  .hero h1{
+    font-size:clamp(43px,13vw,65px);
+  }
+
+  .jobs{
+    grid-template-columns:1fr;
+  }
+
+
+  /*
+   売り場はスマホでは
+   1枚ずつ大きく見せる
+  */
+
   .work-grid{
     grid-template-columns:1fr;
   }
 
+  .work-photo{
+    height:360px;
+  }
+
+
+  /*
+   製造工程は
+   2枚 → 大判 → 2枚
+  */
+
   .process{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+
     gap:10px;
   }
 
@@ -584,12 +794,10 @@ footer{
     height:390px;
   }
 
-  .work-photo{
-    height:360px;
-  }
 
   .numbers{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
   }
 
   .message-photo{
@@ -597,15 +805,17 @@ footer{
   }
 
   .photo-break{
-    background-attachment:scroll;
     height:65vh;
   }
 
   .row{
-    grid-template-columns:90px 1fr;
+    grid-template-columns:
+      90px 1fr;
   }
 
-  .scroll{display:none}
+  .scroll{
+    display:none;
+  }
 
   footer{
     display:block;
@@ -613,7 +823,13 @@ footer{
 
 }
 
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
 @media(prefers-reduced-motion:reduce){
+
   *,
   *:before,
   *:after{
@@ -625,6 +841,7 @@ footer{
     opacity:1;
     transform:none;
   }
+
 }
 
 </style>
@@ -634,15 +851,30 @@ footer{
 <body>
 
 
-<!-- HERO -->
+<!-- ========================================
+     HERO
+======================================== -->
 
 <header class="hero">
 
-<div class="hero-bg"></div>
+<!--
+GitHubで確認済み
+uribazenntai.jpg.JPG
+-->
+
+<img
+  class="hero-image"
+  src="./uribazenntai.jpg.JPG"
+  alt="17Bakeryのパン売り場"
+>
+
+<div class="hero-overlay"></div>
+
 
 <div class="logo">
 17Bakery / RECRUIT
 </div>
+
 
 <div class="hero-copy">
 
@@ -662,6 +894,7 @@ WORK WITH US
 
 </div>
 
+
 <div class="scroll">
 SCROLL
 </div>
@@ -669,9 +902,13 @@ SCROLL
 </header>
 
 
-<!-- MOVING TEXT -->
+
+<!-- ========================================
+     MOVING TEXT
+======================================== -->
 
 <div class="marquee">
+
 <div class="marquee-track">
 
 17BAKERY　RECRUIT　・　WORK WITH US　・　
@@ -680,26 +917,34 @@ SCROLL
 17BAKERY　RECRUIT　・　WORK WITH US　・　
 
 </div>
+
 </div>
 
 
-<!-- MESSAGE -->
+
+<!-- ========================================
+     MESSAGE
+======================================== -->
 
 <section>
 
 <div class="wrap reveal">
 
+
 <div class="kicker">
 MESSAGE
 </div>
+
 
 <h2 class="title">
 一緒に、17Bakeryをつくる。
 </h2>
 
+
 <p class="lead">
 
-17Bakeryは、愛知県稲沢市にあるベーカリーです。
+17Bakeryは、
+愛知県稲沢市にあるベーカリーです。
 
 <br><br>
 
@@ -744,29 +989,43 @@ MESSAGE
 
 <div class="message-photo zoom">
 
+<!--
+GitHubで確認済み
+sutahhu-uribazenntai.jpg.jpg
+-->
+
 <img
-src="./sutahhu-uribazentai.jpg"
-alt="17Bakeryのスタッフと売り場">
+  src="./sutahhu-uribazenntai.jpg.jpg"
+  alt="17Bakeryで働くスタッフ"
+>
 
 </div>
+
 
 </div>
 
 </section>
 
 
-<!-- PHOTO BREAK -->
+
+<!-- ========================================
+     PHOTO BREAK
+======================================== -->
 
 <div class="photo-break">
 
 <div class="wrap reveal">
 
-<div class="kicker" style="color:white">
+<div
+  class="kicker"
+  style="color:white"
+>
 OUR BAKERY
 </div>
 
 <h2>
-焼きたてのパンに囲まれて働く。
+焼きたてのパンに<br>
+囲まれて働く。
 </h2>
 
 </div>
@@ -774,15 +1033,20 @@ OUR BAKERY
 </div>
 
 
-<!-- RECRUIT -->
+
+<!-- ========================================
+     RECRUIT
+======================================== -->
 
 <section class="cream">
 
 <div class="wrap reveal">
 
+
 <div class="kicker">
 RECRUIT
 </div>
+
 
 <h2 class="title">
 現在の募集
@@ -791,6 +1055,8 @@ RECRUIT
 
 <div class="jobs">
 
+
+<!-- FULL TIME -->
 
 <div class="job">
 
@@ -820,6 +1086,9 @@ FULL TIME
 
 </div>
 
+
+
+<!-- PART TIME -->
 
 <div class="job">
 
@@ -860,11 +1129,15 @@ PART TIME
 </section>
 
 
-<!-- SALES -->
+
+<!-- ========================================
+     SALES WORK
+======================================== -->
 
 <section>
 
 <div class="wrap">
+
 
 <div class="reveal">
 
@@ -889,6 +1162,7 @@ SALES WORK
 <br><br>
 
 基本的には、
+
 <strong>
 レジ・品出し・洗い物の3ポジションを
 1時間ごとにローテーション。
@@ -899,18 +1173,20 @@ SALES WORK
 </div>
 
 
+
 <div class="work-grid">
 
 
-<!-- 1 -->
+<!-- 01 REGISTER -->
 
 <div class="work-card zoom reveal">
 
 <div class="work-photo">
 
 <img
-src="./reji.jpg.png"
-alt="レジ接客">
+  src="./reji.jpg.png"
+  alt="レジ接客"
+>
 
 </div>
 
@@ -934,15 +1210,17 @@ alt="レジ接客">
 </div>
 
 
-<!-- 2 -->
+
+<!-- 02 DISPLAY -->
 
 <div class="work-card zoom reveal">
 
 <div class="work-photo">
 
 <img
-src="./sinadasi.jpg"
-alt="品出し">
+  src="./sinadasi.jpg"
+  alt="品出し"
+>
 
 </div>
 
@@ -966,15 +1244,17 @@ alt="品出し">
 </div>
 
 
-<!-- 3 -->
+
+<!-- 03 SUPPORT -->
 
 <div class="work-card zoom reveal">
 
 <div class="work-photo">
 
 <img
-src="./araimono.jpg"
-alt="洗い物">
+  src="./araimono.jpg"
+  alt="洗い物"
+>
 
 </div>
 
@@ -998,15 +1278,17 @@ alt="洗い物">
 </div>
 
 
-<!-- 4 -->
+
+<!-- 04 PACKING -->
 
 <div class="work-card zoom reveal">
 
 <div class="work-photo">
 
 <img
-src="./ahukurodume.jpg"
-alt="袋詰め">
+  src="./ahukurodume.jpg"
+  alt="袋詰め"
+>
 
 </div>
 
@@ -1037,11 +1319,15 @@ alt="袋詰め">
 </section>
 
 
-<!-- PRODUCTION -->
+
+<!-- ========================================
+     BAKERY WORK
+======================================== -->
 
 <section class="cream">
 
 <div class="wrap">
+
 
 <div class="reveal">
 
@@ -1064,13 +1350,21 @@ BAKERY WORK
 </div>
 
 
+
 <div class="process">
 
+
+<!-- 01 MIXING -->
 
 <div class="process-card zoom reveal">
 
 <div class="process-photo">
-<img src="./sikomi.jpg.png" alt="仕込み">
+
+<img
+  src="./sikomi.jpg.png"
+  alt="パン生地の仕込み"
+>
+
 </div>
 
 <div class="process-copy">
@@ -1079,7 +1373,9 @@ BAKERY WORK
 01 / MIXING
 </div>
 
-<h3>仕込み</h3>
+<h3>
+仕込み
+</h3>
 
 <p>
 ミキサーを使って、
@@ -1091,10 +1387,18 @@ BAKERY WORK
 </div>
 
 
+
+<!-- 02 DIVIDING -->
+
 <div class="process-card zoom reveal">
 
 <div class="process-photo">
-<img src="./bunnkatu-2ninn.jpg" alt="分割">
+
+<img
+  src="./bunnkatu-2ninn.jpg"
+  alt="パン生地の分割"
+>
+
 </div>
 
 <div class="process-copy">
@@ -1103,7 +1407,9 @@ BAKERY WORK
 02 / DIVIDING
 </div>
 
-<h3>分割</h3>
+<h3>
+分割
+</h3>
 
 <p>
 生地を商品ごとに、
@@ -1115,10 +1421,18 @@ BAKERY WORK
 </div>
 
 
+
+<!-- 03 SHAPING -->
+
 <div class="process-card process-wide zoom reveal">
 
 <div class="process-photo">
-<img src="./seikei.jpg.png" alt="成形">
+
+<img
+  src="./seikei.jpg.png"
+  alt="パンの成形"
+>
+
 </div>
 
 <div class="process-copy">
@@ -1127,7 +1441,9 @@ BAKERY WORK
 03 / SHAPING
 </div>
 
-<h3>成形</h3>
+<h3>
+成形
+</h3>
 
 <p>
 パンの種類に合わせて、
@@ -1139,10 +1455,18 @@ BAKERY WORK
 </div>
 
 
+
+<!-- 04 BAKING -->
+
 <div class="process-card zoom reveal">
 
 <div class="process-photo">
-<img src="./syousei.jpg.png" alt="焼成">
+
+<img
+  src="./syousei.jpg.png"
+  alt="パンの焼成"
+>
+
 </div>
 
 <div class="process-copy">
@@ -1151,7 +1475,9 @@ BAKERY WORK
 04 / BAKING
 </div>
 
-<h3>焼成</h3>
+<h3>
+焼成
+</h3>
 
 <p>
 オーブンを使って、
@@ -1163,10 +1489,18 @@ BAKERY WORK
 </div>
 
 
+
+<!-- 05 FINISH -->
+
 <div class="process-card zoom reveal">
 
 <div class="process-photo">
-<img src="./siage.jpg" alt="仕上げ">
+
+<img
+  src="./siage.jpg"
+  alt="パンの仕上げ"
+>
+
 </div>
 
 <div class="process-copy">
@@ -1175,7 +1509,9 @@ BAKERY WORK
 05 / FINISH
 </div>
 
-<h3>仕上げ</h3>
+<h3>
+仕上げ
+</h3>
 
 <p>
 焼き上がったパンを仕上げ、
@@ -1194,15 +1530,33 @@ BAKERY WORK
 </section>
 
 
-<!-- VOICE -->
+
+<!-- ========================================
+     STAFF VOICE
+======================================== -->
 
 <section class="voice">
 
+<!--
+ここも直接IMGで読み込む
+-->
+
+<img
+  class="voice-bg"
+  src="./sutahhu-uribazenntai.jpg.jpg"
+  alt=""
+>
+
+<div class="voice-overlay"></div>
+
+
 <div class="wrap voice-inner reveal">
+
 
 <div class="kicker">
 STAFF VOICE
 </div>
+
 
 <h2 class="title">
 実際に働くスタッフの声。
@@ -1222,7 +1576,9 @@ Q. どうして17Bakeryで働こうと思ったんですか？
 <br><br>
 
 スタッフのみんなが明るく生き生きと働いている姿も印象的で、
+
 「私もこのチームの一員として働きたい」
+
 と思ったのがきっかけです。
 
 </p>
@@ -1244,11 +1600,16 @@ Q. 実際に働いてみてどうですか？
 <br><br>
 
 ただ、
+
 「もうこんな時間？」
+
 というくらい一日があっという間です。
 
+<br><br>
+
 スタッフ同士で声を掛け合って、
-忙しい時間をみんなで乗り切ったときには達成感があります。
+忙しい時間をみんなで乗り切ったときには
+達成感があります。
 
 </p>
 
@@ -1260,31 +1621,42 @@ Q. 大変なところは？
 <p>
 
 土日は特にお客様が多いため、
+
 スピードだけではなく、
-丁寧な接客と正確なレジ操作の両方が必要です。
+丁寧な接客と正確なレジ操作の
+両方が必要です。
 
 <br><br>
 
 たくさんのお客様にパンを選んでいただき、
-「ありがとう」と言っていただけることが、
+
+「ありがとう」
+
+と言っていただけることが、
 この仕事のやりがいです。
 
 </p>
+
 
 </div>
 
 </section>
 
 
-<!-- NUMBERS -->
+
+<!-- ========================================
+     NUMBERS
+======================================== -->
 
 <section class="cream">
 
 <div class="wrap reveal">
 
+
 <div class="kicker">
 NUMBERS
 </div>
+
 
 <h2 class="title">
 数字で見る17Bakery
@@ -1293,25 +1665,50 @@ NUMBERS
 
 <div class="numbers">
 
+
 <div class="number">
-<strong>約30名</strong>
+
+<strong>
+約30名
+</strong>
+
 スタッフ
+
 </div>
 
+
 <div class="number">
-<strong>1,500円</strong>
+
+<strong>
+1,500円
+</strong>
+
 土日売り場時給
+
 </div>
 
+
 <div class="number">
-<strong>150時間</strong>
+
+<strong>
+150時間
+</strong>
+
 研修の目安
+
 </div>
 
+
 <div class="number">
-<strong>20% OFF</strong>
+
+<strong>
+20% OFF
+</strong>
+
 従業員割引
+
 </div>
+
 
 </div>
 
@@ -1320,15 +1717,20 @@ NUMBERS
 </section>
 
 
-<!-- SHIFT -->
+
+<!-- ========================================
+     SHIFT
+======================================== -->
 
 <section>
 
 <div class="wrap reveal">
 
+
 <div class="kicker">
 SHIFT
 </div>
+
 
 <h2 class="title">
 売り場スタッフの働き方。
@@ -1338,7 +1740,11 @@ SHIFT
 <p class="lead">
 
 今回の募集は、
-<strong>土日に勤務できる方</strong>
+
+<strong>
+土日に勤務できる方
+</strong>
+
 を対象としています。
 
 <br><br>
@@ -1353,11 +1759,15 @@ SHIFT
 <br><br>
 
 現在働いているスタッフの勤務状況と、
+
 店舗が必要としている曜日・時間帯、
+
 皆さんの勤務可能日時を合わせて
+
 シフトを決定します。
 
 </p>
+
 
 
 <div class="notice">
@@ -1369,12 +1779,15 @@ SHIFT
 <br><br>
 
 ・5:00〜17:00の間で5時間程度<br>
+
 ・7:00〜15:00の間で3時間程度<br>
+
 ・1か月の土日のうち7日程度、勤務希望を出す
 
 <br><br>
 
 勤務可能な曜日や時間帯の幅が広いほど、
+
 シフトを調整しやすくなります。
 
 </div>
@@ -1382,30 +1795,40 @@ SHIFT
 
 <p>
 勤務可能日時がかなり限定される場合は、
+
 希望を出していただいても
 勤務できないことがあります。
 </p>
 
+
 <p>
+
 <strong>
 1日の勤務希望は1時間〜最大6時間。
 </strong>
+
 </p>
+
 
 </div>
 
 </section>
 
 
-<!-- TRAINING -->
+
+<!-- ========================================
+     TRAINING
+======================================== -->
 
 <section class="cream">
 
 <div class="wrap reveal">
 
+
 <div class="kicker">
 TRAINING
 </div>
+
 
 <h2 class="title">
 未経験からでも大丈夫。
@@ -1415,6 +1838,7 @@ TRAINING
 <p class="lead">
 
 17Bakeryで働いているスタッフのほとんどが、
+
 未経験からスタートしています。
 
 <br><br>
@@ -1428,6 +1852,7 @@ TRAINING
 </p>
 
 
+
 <div class="notice">
 
 <strong>
@@ -1437,205 +1862,389 @@ TRAINING
 <br><br>
 
 商品名を覚える必要はありますが、
-一つひとつの値段を暗記する必要はありません。
+
+一つひとつの値段を
+暗記する必要はありません。
+
+<br><br>
 
 レジには商品が
-<strong>イラスト付きで表示</strong>
+
+<strong>
+イラスト付きで表示
+</strong>
+
 されます。
 
 </div>
+
 
 
 <h3>
 研修期間について
 </h3>
 
+
 <p>
+
 売り場スタッフの研修期間は
-<strong>150時間を目安</strong>
-としています。
-</p>
 
-<p>
-研修期間中は
-<strong>時給1,200円</strong>です。
-</p>
-
-<p>
-ただし、
-150時間働けば自動的に研修終了という制度ではありません。
-</p>
-
-<p>
-レジ・品出し・洗い物を、
-現在働いているスタッフと遜色のない
-<strong>速度・正確さ・丁寧さ</strong>
-で担当できることを基準に判断します。
-</p>
-
-<p>
-基準を早く満たした場合には、
 <strong>
-150時間より早く研修期間を終了する場合もあります。
+150時間を目安
 </strong>
+
+としています。
+
 </p>
+
+
+<p>
+
+研修期間中は
+
+<strong>
+時給1,200円
+</strong>
+
+です。
+
+</p>
+
+
+<p>
+
+ただし、
+
+150時間働けば自動的に研修終了という
+制度ではありません。
+
+</p>
+
+
+<p>
+
+レジ・品出し・洗い物を、
+
+現在働いているスタッフと遜色のない
+
+<strong>
+速度・正確さ・丁寧さ
+</strong>
+
+で担当できることを基準に判断します。
+
+</p>
+
+
+<p>
+
+基準を早く満たした場合には、
+
+<strong>
+150時間より早く研修期間を
+終了する場合もあります。
+</strong>
+
+</p>
+
 
 </div>
 
 </section>
 
 
-<!-- FAQ -->
+
+<!-- ========================================
+     FAQ
+======================================== -->
 
 <section>
 
 <div class="wrap faq reveal">
 
+
 <div class="kicker">
 FAQ
 </div>
+
 
 <h2 class="title">
 よくある質問。
 </h2>
 
 
+
 <details open>
-<summary>未経験でも応募できますか？</summary>
+
+<summary>
+未経験でも応募できますか？
+</summary>
+
 <p>
 もちろん大丈夫です。
-ほとんどのスタッフが未経験からスタートしています。
+
+ほとんどのスタッフが
+未経験からスタートしています。
 </p>
+
 </details>
 
 
+
 <details>
-<summary>毎週、土日の両方に出勤する必要がありますか？</summary>
+
+<summary>
+毎週、土日の両方に出勤する必要がありますか？
+</summary>
+
 <p>
 必ず毎週両方に出勤する必要はありません。
-ただし今回の募集は、土日に勤務できる方が対象です。
+
+ただし今回の募集は、
+土日に勤務できる方が対象です。
 </p>
+
 </details>
 
 
+
 <details>
-<summary>短時間でも働けますか？</summary>
+
+<summary>
+短時間でも働けますか？
+</summary>
+
 <p>
 はい。
-1日1時間〜最大6時間まで勤務希望を出していただけます。
+
+1日1時間〜最大6時間まで
+勤務希望を出していただけます。
+
 3時間程度の勤務も可能です。
 </p>
+
 </details>
 
 
+
 <details>
-<summary>研修期間はありますか？</summary>
+
+<summary>
+研修期間はありますか？
+</summary>
+
 <p>
-売り場スタッフは150時間を研修期間の目安としています。
-習熟状況によって早く終了する場合があります。
+売り場スタッフは150時間を
+研修期間の目安としています。
+
+習熟状況によって
+早く終了する場合があります。
 </p>
+
 </details>
 
 
+
 <details>
-<summary>服装・身だしなみにルールはありますか？</summary>
+
+<summary>
+服装・身だしなみにルールはありますか？
+</summary>
+
 
 <p>
 <strong>エプロン：</strong>
+
 デニムエプロンを支給します。
 </p>
 
+
 <p>
 <strong>帽子：</strong>
+
 各自でご用意ください。
+
 長い髪はまとめてください。
 </p>
 
+
 <p>
 <strong>髪色：</strong>
+
 基本的に自由です。
+
 清潔感のある身だしなみをお願いします。
 </p>
 
+
 <p>
 <strong>ネイル：</strong>
+
 製造スタッフは禁止です。
-売り場スタッフはナチュラルなものであれば事前相談のうえ可能です。
+
+売り場スタッフは
+ナチュラルなものであれば
+事前相談のうえ可能です。
 </p>
+
 
 <p>
 <strong>ピアス・アクセサリー：</strong>
-異物混入防止のため勤務中は外していただきます。
+
+異物混入防止のため
+勤務中は外していただきます。
 </p>
+
 
 <p>
 <strong>香水：</strong>
+
 香りの強いものはご遠慮ください。
 </p>
 
+
 </details>
+
 
 
 <details>
-<summary>従業員割引はありますか？</summary>
+
+<summary>
+従業員割引はありますか？
+</summary>
+
 <p>
+
 17Bakeryの商品を
-<strong>20％OFF</strong>
+
+<strong>
+20％OFF
+</strong>
+
 で購入できます。
-1回の購入につき最大400円の割引です。
+
+<br>
+
+1回の購入につき
+最大400円の割引です。
+
 </p>
+
 </details>
+
 
 </div>
 
 </section>
 
 
-<!-- DETAILS -->
+
+<!-- ========================================
+     DETAILS
+======================================== -->
 
 <section class="cream">
 
 <div class="wrap reveal">
 
+
 <div class="kicker">
 DETAILS
 </div>
+
 
 <h2 class="title">
 募集要項
 </h2>
 
+
 <div class="table">
 
-<div class="row">
-<b>製造</b>
-<span>正社員のみ募集</span>
-</div>
 
 <div class="row">
-<b>売り場</b>
-<span>パートスタッフ／土日に勤務できる方</span>
+
+<b>
+製造
+</b>
+
+<span>
+正社員のみ募集
+</span>
+
 </div>
 
-<div class="row">
-<b>売り場時給</b>
-<span>1,500円／研修中1,200円</span>
-</div>
+
 
 <div class="row">
-<b>勤務時間</b>
-<span>1日1〜6時間。勤務可能な曜日・時間帯はご相談ください。</span>
+
+<b>
+売り場
+</b>
+
+<span>
+パートスタッフ／土日に勤務できる方
+</span>
+
 </div>
 
-<div class="row">
-<b>研修</b>
-<span>150時間目安。習熟状況によって早期終了の場合があります。</span>
-</div>
+
 
 <div class="row">
-<b>従業員割引</b>
-<span>20％OFF／1回最大400円割引</span>
+
+<b>
+売り場時給
+</b>
+
+<span>
+1,500円／研修中1,200円
+</span>
+
 </div>
+
+
+
+<div class="row">
+
+<b>
+勤務時間
+</b>
+
+<span>
+1日1〜6時間。
+勤務可能な曜日・時間帯はご相談ください。
+</span>
+
+</div>
+
+
+
+<div class="row">
+
+<b>
+研修
+</b>
+
+<span>
+150時間目安。
+習熟状況によって早期終了の場合があります。
+</span>
+
+</div>
+
+
+
+<div class="row">
+
+<b>
+従業員割引
+</b>
+
+<span>
+20％OFF／1回最大400円割引
+</span>
+
+</div>
+
 
 </div>
 
@@ -1644,20 +2253,29 @@ DETAILS
 </section>
 
 
-<!-- FINAL CTA -->
+
+<!-- ========================================
+     FINAL CTA
+======================================== -->
 
 <section class="final">
 
 <div class="wrap reveal">
 
+
 <div class="kicker">
 ENTRY
 </div>
 
+
 <h2>
+
 まずは、<br>
+
 17Bakeryを知ってください。
+
 </h2>
+
 
 <p>
 
@@ -1668,29 +2286,40 @@ ENTRY
 そのうえで、
 
 <strong>
+
 「17Bakeryで働いてみたい。」
+
 </strong>
 
 と思っていただけたら、
+
 ぜひご応募ください。
 
 </p>
 
 
+
 <a
-class="button"
-href="https://docs.google.com/forms/d/e/1FAIpQLSe9UG8-fVwaNTjHuvh-8IyZ7uzWqlKZ27zBMAuEzqQOdLzOHg/viewform?usp=dialog"
-target="_blank"
-rel="noopener noreferrer">
+  class="button"
+  href="https://docs.google.com/forms/d/e/1FAIpQLSe9UG8-fVwaNTjHuvh-8IyZ7uzWqlKZ27zBMAuEzqQOdLzOHg/viewform?usp=dialog"
+  target="_blank"
+  rel="noopener noreferrer"
+>
 
 応募フォームへ
 
 </a>
 
+
 </div>
 
 </section>
 
+
+
+<!-- ========================================
+     FOOTER
+======================================== -->
 
 <footer>
 
@@ -1705,42 +2334,78 @@ RECRUIT / INAZAWA, AICHI
 </footer>
 
 
+
 <script>
 
-/* スクロールで要素を表示 */
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
 
-const observer = new IntersectionObserver(
+const observer =
+new IntersectionObserver(
+
 (entries)=>{
+
   entries.forEach(entry=>{
+
     if(entry.isIntersecting){
+
       entry.target.classList.add("show");
+
       observer.unobserve(entry.target);
+
     }
+
   });
+
 },
+
 {
   threshold:.12
 }
+
 );
 
-document.querySelectorAll(".reveal").forEach(el=>{
+
+document
+.querySelectorAll(".reveal")
+.forEach(el=>{
+
   observer.observe(el);
+
 });
 
 
-/* HEROをほんの少しパララックス */
 
-const heroBg = document.querySelector(".hero-bg");
+/* ==========================================
+   HERO PARALLAX
+========================================== */
 
-window.addEventListener("scroll",()=>{
-  if(window.scrollY < window.innerHeight){
-    heroBg.style.translate =
-      `0 ${window.scrollY * .12}px`;
-  }
-});
+const heroImage =
+document.querySelector(".hero-image");
+
+
+window.addEventListener(
+  "scroll",
+  ()=>{
+
+    if(
+      heroImage &&
+      window.scrollY < window.innerHeight
+    ){
+
+      heroImage.style.translate =
+        `0 ${window.scrollY * .10}px`;
+
+    }
+
+  },
+  {passive:true}
+);
 
 </script>
 
 
 </body>
+
 </html>
